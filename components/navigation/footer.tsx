@@ -57,7 +57,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Column 1: Logo & Description */}
           <div className="space-y-4">
-            <div className="bg-white p-3 rounded-lg inline-block">
+            <div className="p-3 rounded-lg inline-block">
               <NavLogo />
             </div>
             <p className="text-sm leading-relaxed text-gray-400">

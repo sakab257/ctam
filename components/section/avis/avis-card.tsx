@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { Star, BadgeCheck, Car } from 'lucide-react'
+import { Star, BadgeCheck } from 'lucide-react'
 import { Avis } from '@/lib/avis-data'
 import { cn } from '@/lib/utils'
 
