@@ -4,7 +4,7 @@ export interface Avis {
   rating: number
   date: string
   comment: string
-  vehicle: string
+  vehicle?: string
   verified: boolean
 }
 
@@ -25,29 +25,26 @@ export interface StatsAvis {
 export const avisLBM: Avis[] = [
   {
     id: "1",
-    name: "Sophie M.",
+    name: "Dominique Le Pape",
     rating: 5,
-    date: "Il y a 2 semaines",
-    comment: "Excellent service ! Personnel très professionnel et accueillant. Le contrôle a été rapide et efficace. Je recommande vivement ce centre.",
-    vehicle: "Renault Clio",
+    date: "Modifié il y a 2 jours.",
+    comment: "Accueil, Professionnalisme,ponctualité.....prix.....Je recommande sans hésiter",
     verified: true
   },
   {
     id: "2",
-    name: "Pierre D.",
+    name: "Daniel Sedjro",
     rating: 5,
-    date: "Il y a 1 mois",
-    comment: "Prise de rendez-vous en ligne très pratique. Contrôle technique effectué rapidement avec des explications claires sur les points à surveiller.",
-    vehicle: "Peugeot 308",
+    date: "Il y a une semaine.",
+    comment: "Excellent service. Je recommande !",
     verified: true
   },
   {
     id: "3",
-    name: "Marie L.",
+    name: "Emma Gaby",
     rating: 5,
-    date: "Il y a 3 semaines",
-    comment: "Je suis venue pour une contre-visite et tout s'est très bien passé. L'équipe est sympathique et les tarifs sont transparents.",
-    vehicle: "Citroën C3",
+    date: "Il y a une semaine.",
+    comment: "C’était top ! service très professionnel. Personnel aimable !",
     verified: true
   },
 ]
