@@ -1,5 +1,5 @@
 import { Clock, MapPin, Phone } from 'lucide-react'
-import { schedules } from '@/lib/tarifs-data'
+import { Schedule } from '@/lib/tarifs-data'
 import Link from 'next/link'
 
 interface CenterInfo {
@@ -7,6 +7,7 @@ interface CenterInfo {
   phone: string
   access: string
   promoNote: string
+  schedule: Schedule
 }
 
 interface InfoCardsProps {
@@ -24,12 +25,10 @@ export const InfoCards = ({ centerInfo }: InfoCardsProps) => {
           </div>
           <h3 className="text-lg font-semibold text-gray-900">Horaires</h3>
         </div>
-        {schedules.map((schedule, index) => (
-          <div key={index} className="space-y-1">
-            <p className="text-sm font-medium text-gray-700">{schedule.days}</p>
-            <p className="text-2xl font-bold text-primary">{schedule.hours}</p>
-          </div>
-        ))}
+        <div className="space-y-1">
+          <p className="text-sm font-medium text-gray-700">{centerInfo.schedule.days}</p>
+          <p className="text-2xl font-bold text-primary">{centerInfo.schedule.hours}</p>
+        </div>
       </div>
 
       {/* Adresse */}

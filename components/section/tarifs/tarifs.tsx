@@ -19,12 +19,12 @@ const centers: Record<string, CenterData> = {
   lbm: {
     tarifs: tarifsLBM,
     info: lbmInfo,
-    featuredIds: ['contre-visite', 'particulier', 'hybride']
+    featuredIds: ['contre-visite', 'particulier', 'pollution']
   },
   ivry: {
     tarifs: tarifsIvry,
     info: ivryInfo,
-    featuredIds: ['contre-visite', 'particulier', 'hybride']
+    featuredIds: ['contre-visite', 'particulier', 'pollution']
   }
 }
 

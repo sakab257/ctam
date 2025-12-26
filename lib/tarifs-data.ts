@@ -35,10 +35,12 @@ export const tarifsLBM: Tarif[] = [
   {
     id: "utilitaire",
     title: "Véhicule Utilitaire Léger",
-    price: 90,
+    price: 86,
+    originalPrice: 90,
     description: "Camionnette et VUL",
     icon: Truck,
-    color: "purple",
+    color: "blue",
+    badge: "Promo Web",
     features: [
       "Contrôle adapté VUL",
       "Expertise professionnelle",
@@ -49,10 +51,12 @@ export const tarifsLBM: Tarif[] = [
   {
     id: "4x4",
     title: "4x4 et Grand Utilitaire",
-    price: 95,
+    price: 91,
+    originalPrice: 95,
     description: "Véhicules tout-terrain",
     icon: Truck,
     color: "orange",
+    badge: "Promo Web",
     features: [
       "Contrôle renforcé",
       "Équipement adapté",
@@ -63,10 +67,12 @@ export const tarifsLBM: Tarif[] = [
   {
     id: "hybride",
     title: "Véhicule Hybride",
-    price: 90,
+    price: 86,
+    originalPrice:90,
     description: "Véhicules électriques et hybrides",
     icon: Zap,
     color: "blue",
+    badge: "Promo Web",
     features: [
       "Contrôle spécifique hybride",
       "Expertise électrique",
@@ -77,10 +83,12 @@ export const tarifsLBM: Tarif[] = [
   {
     id: "gaz",
     title: "Véhicule GAZ-GPL",
-    price: 110,
+    price: 106,
+    originalPrice:110,
     description: "Contrôle spécifique GPL/GNV",
     icon: Fuel,
-    color: "red",
+    color: "blue",
+    badge: "Promo Web",
     features: [
       "Contrôle système GAZ",
       "Vérification étanchéité",
@@ -119,10 +127,12 @@ export const tarifsLBM: Tarif[] = [
   {
     id: "hors-gabarit",
     title: "Véhicule hors gabarit",
-    price: 110,
+    price: 106,
+    originalPrice:110,
     description: "Véhicules hors gabarit, Camping Car",
     icon: Home,
-    color: "purple",
+    color: "blue",
+    badge: "Promo Web",
     features: [
       "Contrôle hors gabarit",
       "Équipement adapté",
@@ -136,7 +146,7 @@ export const tarifsLBM: Tarif[] = [
     price: 40,
     description: "Contrôle pollution additionnel",
     icon: Fuel,
-    color: "green",
+    color: "blue",
     features: [
       "Mesure des émissions",
       "Analyse gaz échappement",
@@ -171,7 +181,7 @@ export const tarifsIvry: Tarif[] = [
     price: 95,
     description: "Camionnette et VUL",
     icon: Truck,
-    color: "purple",
+    color: "blue",
     features: [
       "Contrôle adapté VUL",
       "Expertise professionnelle",
@@ -182,10 +192,10 @@ export const tarifsIvry: Tarif[] = [
   {
     id: "4x4",
     title: "4x4 et Grand Utilitaire",
-    price: 100,
+    price: 95,
     description: "Véhicules tout-terrain",
     icon: Truck,
-    color: "orange",
+    color: "blue",
     features: [
       "Contrôle renforcé",
       "Équipement adapté",
@@ -210,10 +220,10 @@ export const tarifsIvry: Tarif[] = [
   {
     id: "gaz",
     title: "Véhicule GAZ-GPL",
-    price: 115,
+    price: 95,
     description: "Contrôle spécifique GPL/GNV",
     icon: Fuel,
-    color: "red",
+    color: "blue",
     features: [
       "Contrôle système GAZ",
       "Vérification étanchéité",
@@ -252,10 +262,10 @@ export const tarifsIvry: Tarif[] = [
   {
     id: "hors-gabarit",
     title: "Véhicule hors gabarit",
-    price: 115,
+    price: 95,
     description: "Véhicules hors gabarit, Camping Car",
     icon: Home,
-    color: "purple",
+    color: "blue",
     features: [
       "Contrôle hors gabarit",
       "Équipement adapté",
@@ -266,10 +276,10 @@ export const tarifsIvry: Tarif[] = [
   {
     id: "pollution",
     title: "Complémentaire Pollution",
-    price: 45,
+    price: 40,
     description: "Contrôle pollution additionnel",
     icon: Fuel,
-    color: "green",
+    color: "blue",
     features: [
       "Mesure des émissions",
       "Analyse gaz échappement",
@@ -291,6 +301,10 @@ export const schedules: Schedule[] = [
   {
     days: "Lundi au Samedi",
     hours: "9h - 18h"
+  },
+  {
+    days: "Lundi au Samedi",
+    hours: "8h - 18h"
   }
 ]
 
@@ -298,7 +312,11 @@ export const lbmInfo = {
   address: "17 rue Corneille, 93150 Le Blanc-Mesnil",
   phone: "01 48 67 66 66",
   access: "À 2 minutes de la gare RER",
-  promoNote: "Remise de 4 € pour véhicule particulier - Valable uniquement sur créneaux spécifiques internet"
+  promoNote: "Remise de 4 € pour véhicule particulier - Valable uniquement sur créneaux spécifiques internet",
+  schedule: {
+    days: "Lundi au Samedi",
+    hours: "9h - 18h"
+  } as Schedule
 }
 
 
@@ -306,5 +324,9 @@ export const ivryInfo = {
   address: "3-5 bd Hippolyte Marquès, 94200 Ivry-sur-Seine",
   phone: "01 46 71 11 22",
   access: "À quelques pas du péripherique.",
-  promoNote: "Remise de 5 € pour véhicule particulier - Valable uniquement sur créneaux spécifiques internet"
+  promoNote: "Remise de 5 € pour véhicule particulier - Valable uniquement sur créneaux spécifiques internet",
+  schedule: {
+    days: "Lundi au Samedi",
+    hours: "8h - 18h"
+  } as Schedule
 }

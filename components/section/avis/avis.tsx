@@ -54,7 +54,7 @@ const Avis = () => {
         {/* Tabs pour les centres */}
         <Tabs defaultValue="lbm" className="w-full">
           <div className="flex justify-center mb-10">
-            <TabsList className="h-auto p-1.5 bg-white shadow-xl border border-gray-100 rounded-2xl">
+            <TabsList className="h-auto p-1.5 bg-white shadow-xl border border-gray-100 rounded-2xl gap-2">
               <TabsTrigger
                 value="lbm"
                 className="h-12 px-4 sm:px-8 gap-2 rounded-xl font-semibold text-gray-600

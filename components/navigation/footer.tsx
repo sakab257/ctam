@@ -111,25 +111,20 @@ export const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-3">
               <Link
-                href="#"
-                className="p-2 bg-gray-800 rounded-lg hover:bg-primary transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </Link>
-              <Link
-                href="#"
+                href="https://www.instagram.com/autosur.cctam/"
                 className="p-2 bg-gray-800 rounded-lg hover:bg-primary transition-colors"
                 aria-label="Instagram"
+                target="_blank"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link
-                href="#"
+                href="https://www.facebook.com/cctamleblancmesnil"
                 className="p-2 bg-gray-800 rounded-lg hover:bg-primary transition-colors"
-                aria-label="LinkedIn"
+                aria-label="Instagram"
+                target="_blank"
               >
-                <Linkedin className="h-5 w-5" />
+                <Facebook className="h-5 w-5" />
               </Link>
             </div>
           </div>

@@ -25,7 +25,7 @@ export const NavLogo = () => {
           priority
           title="CTAM Le Blanc-Mesnil / Ivry-Sur-Seine"
         />
-        <span className="font-bold text-xl md:text-3xl text-gray-600">CTAM</span>
+        <span className="font-bold text-xl md:text-3xl">CTAM</span>
     </Link>
   )
 }
