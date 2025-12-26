@@ -1,17 +1,17 @@
 export const links = [
     {
         title: "Services",
-        href: "#services",
+        href: "/#services",
         description: "Rejoignez l'équipe CTAM - Consultez nos offres d'emploi"
     },
     {
         title: "Tarifs & Horaires",
-        href: "#tarifs",
+        href: "/#tarifs",
         description: "Consultez nos tarifs compétitifs et nos horaires d'ouverture"
     },
     {
         title: "Avis Clients",
-        href: "#avis",
+        href: "/#avis",
         description: "Consultez les avis et témoignages de nos clients"
     },
 ]
