@@ -49,7 +49,7 @@ export const FooterMobile = () => {
                                     </div>
                                     <div className="flex-1">
                                         <p className="font-semibold text-gray-900">Le Blanc-Mesnil</p>
-                                        <p className="text-sm text-gray-500">{lbmInfo.address}</p>
+                                        <p className="text-[10px] text-gray-500">{lbmInfo.address}</p>
                                     </div>
                                     <div className="text-right">
                                         <p className="font-bold text-primary">{lbmInfo.phone}</p>
@@ -64,7 +64,7 @@ export const FooterMobile = () => {
                                     </div>
                                     <div className="flex-1">
                                         <p className="font-semibold text-gray-900">Ivry-sur-Seine</p>
-                                        <p className="text-sm text-gray-500">{ivryInfo.address}</p>
+                                        <p className="text-[10px] text-gray-500">{ivryInfo.address}</p>
                                     </div>
                                     <div className="text-right">
                                         <p className="font-bold text-primary">{ivryInfo.phone}</p>

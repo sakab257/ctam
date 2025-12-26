@@ -69,15 +69,16 @@ export function CookieBanner() {
       }`}
     >
       <div className="container mx-auto max-w-4xl">
-        <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 relative">
+        <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 relative px-12">
           {/* Close button */}
-          <button
+          <Button
             onClick={handleClose}
-            className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors"
+            className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-color"
+            variant={'ghost'}
             aria-label="Fermer"
           >
             <X className="h-5 w-5" />
-          </button>
+          </Button>
 
           <div className="flex flex-col md:flex-row gap-6 items-start">
             {/* Icon and Text */}
@@ -98,7 +99,7 @@ export function CookieBanner() {
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
+            <div className="flex flex-col gap-3 w-full md:w-auto shrink-0 px-4">
               <Button
                 onClick={handleAcceptAll}
                 className="font-semibold w-full sm:w-auto"

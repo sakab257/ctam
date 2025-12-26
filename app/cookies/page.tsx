@@ -7,6 +7,7 @@ import { Switch } from "@/components/ui/switch"
 import { Button } from "@/components/ui/button"
 import { Cookie, Shield, BarChart3, Megaphone, ArrowLeft, CheckCircle2, Info } from "lucide-react"
 import Link from "next/link"
+import { CookieBanner } from "@/components/cookies/cookie-banner"
 
 interface CookiePreferences {
   necessary: boolean
@@ -119,6 +120,7 @@ export default function CookiesPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      
       <Header />
       <main className="flex-1 w-full">
         {/* Hero Header */}
