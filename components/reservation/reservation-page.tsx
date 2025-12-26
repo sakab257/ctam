@@ -68,12 +68,12 @@ export const ReservationPage = ({ center, iframeSrc }: ReservationPageProps) => 
                   {iframeSrc ? (
                     <iframe
                       src={iframeSrc}
-                      className="w-full h-[600px] md:h-[700px] lg:h-[750px] border-0"
+                      className="w-full h-150 md:h-175 lg:h-187.5 border-0"
                       title={`Réservation ${center.name}`}
                       allow="payment"
                     />
                   ) : (
-                    <div className="w-full h-[600px] md:h-[700px] lg:h-[750px] flex flex-col items-center justify-center p-8 bg-linear-to-br from-gray-50 to-blue-50">
+                    <div className="w-full h-150 md:h-175 lg:h-187.5 flex flex-col items-center justify-center p-8 bg-linear-to-br from-gray-50 to-blue-50">
                       <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-6">
                         <Calendar className="h-10 w-10 text-primary" />
                       </div>
@@ -170,17 +170,6 @@ export const ReservationPage = ({ center, iframeSrc }: ReservationPageProps) => 
                       </div>
                     ))}
                   </div>
-                </div>
-
-                {/* Trust Badge */}
-                <div className="bg-linear-to-r from-primary to-blue-600 rounded-2xl p-6 text-white">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Shield className="h-6 w-6" />
-                    <span className="font-bold">Paiement sécurisé</span>
-                  </div>
-                  <p className="text-sm text-white/90">
-                    Vos informations sont protégées. Paiement sur place ou en ligne selon disponibilité.
-                  </p>
                 </div>
               </div>
             </div>

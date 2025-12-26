@@ -175,22 +175,25 @@ export const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-white font-semibold text-lg mb-4">Liens Rapides</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="#services" className="text-sm hover:text-primary transition-colors">
+              <Link href="/#services" className="text-sm hover:text-primary transition-colors">
                 Nos Services
               </Link>
-              <Link href="#tarifs" className="text-sm hover:text-primary transition-colors">
+              <Link href="/#tarifs" className="text-sm hover:text-primary transition-colors">
                 Tarifs & Horaires
               </Link>
-              <Link href="#avis" className="text-sm hover:text-primary transition-colors">
+              <Link href="/#avis" className="text-sm hover:text-primary transition-colors">
                 Avis Clients
               </Link>
-              <Link href="#" className="text-sm hover:text-primary transition-colors">
+              <Link href="/#hero-section" className="text-sm hover:text-primary transition-colors">
                 Prendre Rendez-vous
               </Link>
-              <Link href="#" className="text-sm hover:text-primary transition-colors">
+              <Link href="/quand-passer-controle" className="text-sm hover:text-primary transition-colors">
+                Quand passer votre contrôle ?
+              </Link>
+              <Link href="/eviter-contre-visite" className="text-sm hover:text-primary transition-colors">
                 Éviter la Contre-visite
               </Link>
-              <Link href="#" className="text-sm hover:text-primary transition-colors">
+              <Link href="/acces-plan" className="text-sm hover:text-primary transition-colors">
                 Accès & Plan
               </Link>
             </nav>
@@ -200,19 +203,19 @@ export const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-white font-semibold text-lg mb-4">Informations Légales</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="#" className="text-sm hover:text-primary transition-colors">
+              <Link href="/mentions-legales" className="text-sm hover:text-primary transition-colors">
                 Mentions Légales
               </Link>
-              <Link href="#" className="text-sm hover:text-primary transition-colors">
+              <Link href="/politique-confidentialite" className="text-sm hover:text-primary transition-colors">
                 Politique de Confidentialité
               </Link>
-              <Link href="#" className="text-sm hover:text-primary transition-colors">
+              <Link href="/conditions-generales" className="text-sm hover:text-primary transition-colors">
                 Conditions Générales
               </Link>
-              <Link href="#" className="text-sm hover:text-primary transition-colors">
+              <Link href="/cookies" className="text-sm hover:text-primary transition-colors">
                 Cookies
               </Link>
-              <Link href="#" className="text-sm hover:text-primary transition-colors">
+              <Link href="/plan-site" className="text-sm hover:text-primary transition-colors">
                 Plan du Site
               </Link>
             </nav>

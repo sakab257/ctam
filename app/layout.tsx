@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { poppins } from "@/lib/fonts";
+import { CookieBanner } from "@/components/cookies/cookie-banner";
 
 export const metadata: Metadata = {
   title: "CTAM - Contrôle Technique Auto Moto",
@@ -18,6 +19,7 @@ export default function RootLayout({
         className={`${poppins.className} antialiased h-full overflow-y-auto`}
       >
         {children}
+        <CookieBanner />
       </body>
     </html>
   );
