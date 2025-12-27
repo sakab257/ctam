@@ -111,7 +111,7 @@ export const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-3">
               <Link
-                href="https://www.instagram.com/autosur.cctam/"
+                href="https://www.instagram.com/ctam.autosur/"
                 className="p-2 bg-gray-800 rounded-lg hover:bg-primary transition-colors"
                 aria-label="Instagram"
                 target="_blank"
@@ -168,7 +168,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-start gap-3">
                 <Clock className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <p className="text-sm text-gray-400">Lun - Sam : 9h - 18h</p>
+                <p className="text-sm text-gray-400">Lun - Sam : 8h - 18h</p>
               </div>
             </div>
           </div>

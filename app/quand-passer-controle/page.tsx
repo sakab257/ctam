@@ -1,5 +1,5 @@
 import { PageLayout } from "@/components/layout/page-layout"
-import { Calendar, Clock, AlertCircle, Car, Truck, Ambulance, CheckCircle2 } from "lucide-react"
+import { Calendar, Clock, AlertCircle, Car, Truck, Ambulance, CheckCircle2, Bike } from "lucide-react"
 import { Metadata } from "next"
 import Link from "next/link"
 
@@ -61,25 +61,46 @@ const vehicleTypes = [
         highlight: false
       }
     ]
+  },
+  {
+    icon: Bike,
+    title: "Motos & 2 Roues Motorisés",
+    items: [
+      {
+        label: "Premier contrôle",
+        value: "Dans les 6 mois avant le 5ème anniversaire du véhicule",
+        highlight: true
+      },
+      {
+        label: "Validité",
+        value: "3 ans entre chaque contrôle",
+        highlight: false
+      },
+      {
+        label: "Contre-visite",
+        value: "Délai de 2 mois moins 1 jour après la visite défavorable",
+        highlight: false
+      }
+    ]
   }
 ]
 
 const timeline = [
   {
     period: "6 mois avant",
-    action: "Vous pouvez passer votre contrôle sans perdre de validité",
+    action: "Vous pouvez passer votre contrôle sans perdre de validité.",
     icon: CheckCircle2,
     color: "green"
   },
   {
     period: "Date d'échéance",
-    action: "Dernier jour pour passer votre contrôle sans être en infraction",
+    action: "Dernier jour pour passer votre contrôle sans être en infraction.",
     icon: AlertCircle,
     color: "amber"
   },
   {
     period: "Après l'échéance",
-    action: "Vous êtes en infraction - Amende de 135€",
+    action: "Vous êtes en infraction - Amende de 135€ + Risque d'immobilisation.",
     icon: AlertCircle,
     color: "red"
   }
@@ -108,6 +129,7 @@ export default function QuandPasserControle() {
                 et sur la vignette collée sur votre pare-brise. Vous pouvez passer votre contrôle jusqu'à 6 mois avant
                 la date d'échéance sans perdre de validité.
               </p>
+              <p className="text-blue-800 font-bold">La date limite est inscrite dans la case X1 de votre certificat d'immatriculation.</p>
             </div>
           </div>
         </div>
@@ -118,7 +140,7 @@ export default function QuandPasserControle() {
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-8">
           Selon votre type de véhicule
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {vehicleTypes.map((type, index) => (
             <div
               key={index}

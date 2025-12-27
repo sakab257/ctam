@@ -28,6 +28,11 @@ export const otherLinks = [
         description: "Conseils pour réussir votre contrôle technique du premier coup"
     },
     {
+        title: "Quand passer votre contrôle ?",
+        href: "/quand-passer-controle",
+        description: "Quand est-ce que vous devez passer votre contrôle technique"
+    },
+    {
         title: "Accès & Plan",
         href: "/acces-plan",
         description: "Voyez comment accéder à nos centres."

@@ -46,14 +46,14 @@ const services = [
 
 const centers = [
   {
-    name: "CTAM Le Blanc-Mesnil",
+    name: "CTAM AUTOSUR Le Blanc-Mesnil",
     info: lbmInfo,
     agrements: { auto: "S093S290", moto: "L093S330" }
   },
   {
-    name: "TUV DCTA Ivry-sur-Seine",
+    name: "CTAM AUTOSUR Ivry-sur-Seine",
     info: ivryInfo,
-    agrements: { auto: "S094S290", moto: "L094S330" }
+    agrements: { auto: "S094S248", moto: "L094S330" }
   }
 ]
 

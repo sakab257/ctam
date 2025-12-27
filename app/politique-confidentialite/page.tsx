@@ -27,7 +27,7 @@ export default function PolitiqueConfidentialite() {
                 Notre engagement
               </h2>
               <p className="text-blue-800">
-                SAS CT LBM s'engage à protéger la vie privée de ses utilisateurs et à traiter leurs données
+                SAS BSKN GROUP s'engage à protéger la vie privée de ses utilisateurs et à traiter leurs données
                 personnelles en conformité avec le Règlement Général sur la Protection des Données (RGPD)
                 et la loi Informatique et Libertés.
               </p>
@@ -46,8 +46,8 @@ export default function PolitiqueConfidentialite() {
           <div className="prose prose-gray max-w-none">
             <p className="text-gray-600 leading-relaxed">
               Le responsable du traitement des données personnelles est :<br />
-              <strong>SAS CT LBM</strong><br />
-              17 rue Corneille, 93150 Le Blanc-Mesnil<br />
+              <strong>SAS BSKN GROUP</strong><br />
+              152 Avenue Jean Jaures, 93700 Drancy<br />
               Email : autosurlbm@gmail.com<br />
               Téléphone : 01 48 67 66 66
             </p>
@@ -192,7 +192,7 @@ export default function PolitiqueConfidentialite() {
             </p>
             <ul className="list-none text-gray-600 space-y-2 mb-6">
               <li><strong>Email</strong> : autosurlbm@gmail.com</li>
-              <li><strong>Courrier</strong> : SAS CT LBM, 17 rue Corneille, 93150 Le Blanc-Mesnil</li>
+              <li><strong>Courrier</strong> : SAS BSKN GROUP, 152 Avenue Jean Jaures, 93700 Drancy</li>
             </ul>
             <p className="text-gray-600 leading-relaxed">
               Vous avez également le droit d'introduire une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés) :

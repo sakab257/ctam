@@ -12,12 +12,12 @@ const sections = [
     icon: Building2,
     title: "Éditeur du site",
     content: [
-      { label: "Raison sociale", value: "SAS CT LBM" },
-      { label: "Capital social", value: "1 000 euros" },
-      { label: "RCS", value: "Bobigny B 909 370 223" },
-      { label: "N° TVA intracommunautaire", value: "FR37 909 370 223" },
-      { label: "Siège social", value: "17 rue Corneille, 93150 Le Blanc-Mesnil" },
-      { label: "SIRET", value: "909 370 223 00028" },
+      { label: "Raison sociale", value: "SAS BSKN GROUP" },
+      { label: "Capital social", value: "500 euros" },
+      { label: "RCS", value: "Bobigny B 928 047 935" },
+      { label: "N° TVA intracommunautaire", value: "FR56 928 047 935" },
+      { label: "Siège social", value: "152 Avenue Jean Jaures, 93700 Drancy" },
+      { label: "SIRET", value: "928 047 935 00012" },
     ]
   },
   {
@@ -41,8 +41,8 @@ const sections = [
     icon: Globe,
     title: "Conception et réalisation",
     content: [
-      { label: "Conception", value: "SAS CT LBM" },
-      { label: "Développement", value: "SAS CT LBM" },
+      { label: "Conception", value: "SAS BSKN GROUP" },
+      { label: "Développement", value: "SAS BSKN GROUP" },
     ]
   }
 ]
@@ -91,10 +91,10 @@ export default function MentionsLegales() {
           <div className="prose prose-gray max-w-none">
             <p className="text-gray-600 leading-relaxed mb-4">
               L'ensemble du contenu de ce site (textes, images, vidéos, logos, graphismes, etc.) est la propriété
-              exclusive de SAS CT LBM ou de ses partenaires. Toute reproduction, représentation, modification,
+              exclusive de SAS BSKN GROUP ou de ses partenaires. Toute reproduction, représentation, modification,
               publication, transmission, dénaturation, totale ou partielle du site ou de son contenu, par quelque
               procédé que ce soit, et sur quelque support que ce soit est interdite sans l'autorisation écrite
-              préalable de SAS CT LBM.
+              préalable de SAS BSKN GROUP.
             </p>
             <p className="text-gray-600 leading-relaxed">
               Toute exploitation non autorisée du site ou de son contenu, des informations qui y sont divulguées,
@@ -133,7 +133,7 @@ export default function MentionsLegales() {
             <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">Vos droits</h3>
             <p className="text-gray-600 leading-relaxed">
               Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité
-              de vos données. Pour exercer ces droits, contactez-nous à l'adresse : contact@cctam.fr
+              de vos données. Pour exercer ces droits, contactez-nous à l'adresse : autosurlbm@gmail.com
             </p>
           </div>
         </div>

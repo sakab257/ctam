@@ -25,12 +25,12 @@ export default function ConditionsGenerales() {
           </div>
           <div className="prose prose-gray max-w-none">
             <p className="text-gray-600 leading-relaxed mb-4">
-              Les présentes conditions générales régissent l'utilisation du site internet www.cctam.fr
-              et les prestations de contrôle technique proposées par la société SAS CT LBM.
+              Les présentes conditions générales régissent l'utilisation du site internet www.ctamcontrole.fr
+              et les prestations de contrôle technique proposées par la société SAS BSKN GROUP.
             </p>
             <p className="text-gray-600 leading-relaxed">
               En utilisant ce site ou en réservant un rendez-vous, vous acceptez sans réserve les présentes
-              conditions générales. SAS CT LBM se réserve le droit de modifier ces conditions à tout moment.
+              conditions générales. SAS BSKN GROUP se réserve le droit de modifier ces conditions à tout moment.
             </p>
           </div>
         </div>
