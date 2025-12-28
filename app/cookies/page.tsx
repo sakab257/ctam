@@ -32,7 +32,7 @@ const cookieCategories = [
     description: "Ces cookies nous permettent de comprendre comment vous utilisez notre site afin d'améliorer votre expérience. Toutes les données sont anonymisées.",
     examples: ["Google Analytics", "Statistiques de visite", "Pages consultées"],
     required: false,
-    color: "purple"
+    color: "blue"
   },
   {
     id: "marketing",
@@ -41,7 +41,7 @@ const cookieCategories = [
     description: "Ces cookies sont utilisés pour vous proposer des publicités pertinentes. Ils peuvent être utilisés par nos partenaires publicitaires pour créer un profil de vos intérêts.",
     examples: ["Publicités ciblées", "Réseaux sociaux", "Remarketing"],
     required: false,
-    color: "orange"
+    color: "blue"
   }
 ]
 

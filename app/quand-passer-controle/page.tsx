@@ -90,19 +90,19 @@ const timeline = [
     period: "6 mois avant",
     action: "Vous pouvez passer votre contrôle sans perdre de validité.",
     icon: CheckCircle2,
-    color: "green"
+    color: "blue"
   },
   {
     period: "Date d'échéance",
     action: "Dernier jour pour passer votre contrôle sans être en infraction.",
     icon: AlertCircle,
-    color: "amber"
+    color: "blue"
   },
   {
     period: "Après l'échéance",
     action: "Vous êtes en infraction - Amende de 135€ + Risque d'immobilisation.",
     icon: AlertCircle,
-    color: "red"
+    color: "blue"
   }
 ]
 
@@ -188,36 +188,16 @@ export default function QuandPasserControle() {
             {timeline.map((item, index) => (
               <div
                 key={index}
-                className={`flex items-start gap-4 p-4 rounded-xl ${
-                  item.color === "green" ? "bg-green-50" :
-                  item.color === "amber" ? "bg-amber-50" :
-                  "bg-red-50"
-                }`}
+                className={`flex items-start gap-4 p-4 rounded-xl bg-blue-50`}
               >
-                <div className={`p-2 rounded-lg shrink-0 ${
-                  item.color === "green" ? "bg-green-100" :
-                  item.color === "amber" ? "bg-amber-100" :
-                  "bg-red-100"
-                }`}>
-                  <item.icon className={`h-5 w-5 ${
-                    item.color === "green" ? "text-green-600" :
-                    item.color === "amber" ? "text-amber-600" :
-                    "text-red-600"
-                  }`} />
+                <div className={`p-2 rounded-lg shrink-0 bg-blue-100`}>
+                  <item.icon className={`h-5 w-5 text-blue-600`} />
                 </div>
                 <div>
-                  <p className={`font-bold mb-1 ${
-                    item.color === "green" ? "text-green-900" :
-                    item.color === "amber" ? "text-amber-900" :
-                    "text-red-900"
-                  }`}>
+                  <p className={`font-bold mb-1 text-blue-900`}>
                     {item.period}
                   </p>
-                  <p className={`${
-                    item.color === "green" ? "text-green-800" :
-                    item.color === "amber" ? "text-amber-800" :
-                    "text-red-800"
-                  }`}>
+                  <p className={`text-blue-800`}>
                     {item.action}
                   </p>
                 </div>
@@ -231,8 +211,8 @@ export default function QuandPasserControle() {
       <div className="max-w-4xl mx-auto mb-12">
         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-8">
           <div className="flex items-start gap-4 mb-6">
-            <div className="p-3 bg-amber-100 rounded-xl shrink-0">
-              <Clock className="h-6 w-6 text-amber-600" />
+            <div className="p-3 bg-blue-100 rounded-xl shrink-0">
+              <Clock className="h-6 w-6 text-blue-600" />
             </div>
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-2">
@@ -243,8 +223,8 @@ export default function QuandPasserControle() {
                 <strong className="text-gray-900"> 2 mois moins 1 jour </strong>
                 pour effectuer les réparations et vous présenter à nouveau.
               </p>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
-                <p className="text-amber-800 text-sm">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-blue-800 text-sm">
                   <strong>Important :</strong> La contre-visite doit être effectuée dans le même centre
                   ou dans un centre du même réseau. Passé ce délai, un nouveau contrôle complet sera nécessaire.
                 </p>

@@ -155,8 +155,8 @@ export default function PolitiqueConfidentialite() {
         {/* Vos droits */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-8 mb-6">
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-green-100 rounded-xl">
-              <UserCheck className="h-6 w-6 text-green-600" />
+            <div className="p-3 bg-primary/10 rounded-xl">
+              <UserCheck className="h-6 w-6 text-primary" />
             </div>
             <h2 className="text-xl font-bold text-gray-900">Vos droits</h2>
           </div>

@@ -1,5 +1,5 @@
 import { PageLayout } from "@/components/layout/page-layout"
-import { Newspaper, Calendar, Bike, Clock, CheckCircle2, ArrowRight, FileText, Wrench, Gift, AlertCircle } from "lucide-react"
+import { Newspaper, Calendar, Bike, Clock, CheckCircle2, ArrowRight, Gift } from "lucide-react"
 import { Metadata } from "next"
 import Link from "next/link"
 
@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 }
 
 const articles = [
+  // Article featured (index 0) - CT 2 roues
   {
     id: 1,
     date: "15 avril 2024",
@@ -32,31 +33,10 @@ const articles = [
       frequence: "Premier contrôle à 5 ans après mise en circulation, puis tous les 3 ans."
     }
   },
+  // Jeu concours (index 1)
   {
     id: 2,
-    date: "Décembre 2025",
-    category: "Réglementation",
-    title: "Nouveauté réglementaire - IT VL F0 indice N",
-    excerpt: "Une nouvelle instruction technique IT VL F0 sera applicable au 1er janvier 2026. Merci de prendre connaissance des évolutions qui sont détaillées dans l'Info Tech 5-25.",
-    featured: false
-  },
-  {
-    id: 3,
-    date: "Décembre 2025",
-    category: "Réglementation",
-    title: "Évolution réglementaire catégorie L",
-    excerpt: "Modification de l'Annexe III relative aux équipements dans le cadre du contrôle des véhicules de la catégorie L (Arrêté du 18 août 2025 – art. 6).",
-    featured: false,
-    modifications: [
-      "Les dimensions des miroirs portatifs sont désormais fixées avec un diamètre minimal de 200mm pour un miroir circulaire et de 200x100mm de côtés pour un miroir rectangulaire.",
-      "Un bloc pédale de commande de frein de service doit être utilisé dans le cadre du contrôle des voiturettes.",
-      "Le bloc roue doit être fixé au sol ou sur le moyen de levage afin de garantir la stabilité du véhicule."
-    ],
-    dateApplication: "1er janvier 2026"
-  },
-  {
-    id: 4,
-    date: "Décembre 2025",
+    date: "1er décembre 2025",
     category: "Événement",
     title: "Jeu concours national AUTOSUR 2025",
     excerpt: "Gagnez un week-end de rêve pour 2 personnes d'une valeur de 249€ ! Chaque semaine, un client peut remporter ce lot jusqu'à fin décembre.",
@@ -68,9 +48,10 @@ const articles = [
       finDate: "Fin décembre 2025"
     }
   },
+  // Promo Ivry (index 2)
   {
-    id: 5,
-    date: "24 décembre 2025",
+    id: 3,
+    date: "Décembre 2025",
     category: "Promotion",
     title: "Offre spéciale web : -5€ sur votre contrôle technique à Ivry-Sur-Seine",
     excerpt: "Profitez de notre remise exclusive pour toute réservation en ligne sur les créneaux disponibles.",
@@ -81,9 +62,10 @@ const articles = [
       conditions: "Valable pour véhicules particuliers hors 4x4 et GPL, sur créneaux spécifiques pris en ligne."
     }
   },
+  // Promo Blanc-Mesnil (index 3)
   {
-    id: 6,
-    date: "1er janvier 2024",
+    id: 4,
+    date: "Décembre 2025",
     category: "Promotion",
     title: "Offre spéciale web : -4€ sur votre contrôle technique au Blanc-Mesnil",
     excerpt: "Profitez de notre remise exclusive pour toute réservation en ligne sur les créneaux disponibles.",
@@ -94,20 +76,45 @@ const articles = [
       conditions: "Valable pour véhicules particuliers hors 4x4 et GPL, sur créneaux spécifiques pris en ligne."
     }
   },
+  // === Autres actualités (index 4+) - triées du plus récent au plus ancien ===
+  {
+    id: 5,
+    date: "1er janvier 2026",
+    category: "Fêtes",
+    title: "Bonne année 2026 !",
+    excerpt: "L'équipe CTAM AUTOSUR vous présente ses meilleurs voeux pour cette nouvelle année 2026 ! Que cette année vous apporte santé, bonheur et réussite. Nous restons à votre service pour tous vos contrôles techniques.",
+    featured: false
+  },
+  {
+    id: 6,
+    date: "28 décembre 2025",
+    category: "Conseil",
+    title: "Nouvelle année, pensez à votre contrôle technique !",
+    excerpt: "Commencez l'année du bon pied en vérifiant la date d'échéance de votre contrôle technique. Anticipez et réservez dès maintenant pour bénéficier des meilleurs créneaux et éviter les contre-visites.",
+    featured: false
+  },
   {
     id: 7,
-    date: "Décembre 2025",
-    category: "Information",
-    title: "Nouveau centre à Ivry-sur-Seine",
-    excerpt: "CTAM s'agrandit avec l'ouverture d'un second centre de contrôle technique sous l'enseigne AUTOSUR à Ivry-sur-Seine.",
+    date: "25 décembre 2025",
+    category: "Fêtes",
+    title: "Joyeux Noël à tous !",
+    excerpt: "Toute l'équipe CTAM AUTOSUR vous souhaite un très joyeux Noël ! Profitez de ces moments précieux en famille et entre amis. Nos centres seront fermés le 25 décembre et rouvriront dès le 26 décembre pour vous accueillir.",
     featured: false
   },
   {
     id: 8,
-    date: "Décembre 2025",
+    date: "23 décembre 2025",
     category: "Information",
     title: "Très belles fêtes de fin d'année",
     excerpt: "Cher(e)s clients, toute l'équipe CTAM AUTOSUR vous souhaite de merveilleuses fêtes de fin d'année et vous adresse ses meilleurs voeux pour 2026, à vous et à vos proches. Que cette nouvelle année soit remplie de joie, de succès, et de précieux moments partagés avec ceux qui vous sont chers.",
+    featured: false
+  },
+  {
+    id: 9,
+    date: "15 décembre 2025",
+    category: "Information",
+    title: "Nouveau centre à Ivry-sur-Seine",
+    excerpt: "CTAM s'agrandit avec l'ouverture d'un second centre de contrôle technique sous l'enseigne AUTOSUR à Ivry-sur-Seine.",
     featured: false
   },
 ]
@@ -200,71 +207,6 @@ export default function Actualites() {
           </div>
         </div>
 
-        {/* Nouvelles Réglementations */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
-          {/* IT VL F0 */}
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-            <div className="bg-blue-500 p-4 text-white">
-              <div className="flex items-center gap-2">
-                <FileText className="h-5 w-5" />
-                <span className="text-sm font-semibold bg-white/20 px-3 py-1 rounded-full">
-                  Nouvelle Réglementation
-                </span>
-              </div>
-              <h3 className="text-xl font-bold mt-2">
-                {articles[1].title}
-              </h3>
-            </div>
-            <div className="p-6">
-              <p className="text-gray-600 mb-4">
-                {articles[1].excerpt}
-              </p>
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-                <div className="flex items-center gap-2 text-blue-800 font-semibold">
-                  <AlertCircle className="h-4 w-4" />
-                  Applicable au 1er janvier 2026
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Évolution catégorie L */}
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-            <div className="bg-blue-500 p-4 text-white">
-              <div className="flex items-center gap-2">
-                <Wrench className="h-5 w-5" />
-                <span className="text-sm font-semibold bg-white/20 px-3 py-1 rounded-full">
-                  Évolution Équipements
-                </span>
-              </div>
-              <h3 className="text-xl font-bold mt-2">
-                {articles[2].title}
-              </h3>
-            </div>
-            <div className="p-6">
-              <p className="text-gray-600 mb-4">
-                {articles[2].excerpt}
-              </p>
-              <div className="space-y-3 mb-4">
-                {articles[2].modifications?.map((mod, i) => (
-                  <div key={i} className="flex items-start gap-2 text-gray-700 text-sm">
-                    <span className="bg-blue-100 text-blue-700 font-bold rounded-full w-5 h-5 flex items-center justify-center shrink-0 mt-0.5">
-                      {i + 1}
-                    </span>
-                    <span>{mod}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-                <div className="flex items-center gap-2 text-blue-800 font-semibold">
-                  <AlertCircle className="h-4 w-4" />
-                  À prendre en compte dès le 1er janvier 2026
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Jeu Concours AUTOSUR */}
         <div className="bg-linear-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 md:p-8 text-white mb-12">
           <div className="flex flex-col md:flex-row items-center gap-6">
@@ -276,20 +218,20 @@ export default function Actualites() {
                 </span>
               </div>
               <h2 className="text-2xl font-bold mb-2">
-                {articles[3].title}
+                {articles[1].title}
               </h2>
               <p className="text-white/90 mb-4">
-                {articles[3].concours?.gain}
+                {articles[1].concours?.gain}
               </p>
               <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
                 <p className="text-sm font-medium">
-                  <strong>Comment participer :</strong> {articles[3].concours?.participation}
+                  <strong>Comment participer :</strong> {articles[1].concours?.participation}
                 </p>
               </div>
             </div>
             <div className="text-center bg-white/20 rounded-2xl p-6 backdrop-blur-sm">
               <div className="text-sm font-medium mb-1">Valeur du lot</div>
-              <div className="text-4xl font-bold">{articles[3].concours?.valeur}€</div>
+              <div className="text-4xl font-bold">{articles[1].concours?.valeur}€</div>
               <div className="text-sm mt-2 text-white/80">Week-end pour 2</div>
               <div className="mt-3 pt-3 border-t border-white/20 text-xs">
                 Jusqu'à fin décembre 2025
@@ -306,14 +248,14 @@ export default function Actualites() {
               Offre en cours
             </span>
             <h3 className="text-xl font-bold mt-3 mb-2">
-              {articles[4].title}
+              {articles[2].title}
             </h3>
             <p className="text-white/90 text-sm mb-4">
-              {articles[4].promo?.conditions}
+              {articles[2].promo?.conditions}
             </p>
             <div className="flex items-center gap-3">
-              <div className="text-3xl font-bold">{articles[4].promo?.prix}€</div>
-              <div className="text-white/60 line-through">{articles[4].promo?.prixOriginal}€</div>
+              <div className="text-3xl font-bold">{articles[2].promo?.prix}€</div>
+              <div className="text-white/60 line-through">{articles[2].promo?.prixOriginal}€</div>
             </div>
           </div>
 
@@ -323,14 +265,14 @@ export default function Actualites() {
               Offre en cours
             </span>
             <h3 className="text-xl font-bold mt-3 mb-2">
-              {articles[5].title}
+              {articles[3].title}
             </h3>
             <p className="text-white/90 text-sm mb-4">
-              {articles[5].promo?.conditions}
+              {articles[3].promo?.conditions}
             </p>
             <div className="flex items-center gap-3">
-              <div className="text-3xl font-bold">{articles[5].promo?.prix}€</div>
-              <div className="text-white/60 line-through">{articles[5].promo?.prixOriginal}€</div>
+              <div className="text-3xl font-bold">{articles[3].promo?.prix}€</div>
+              <div className="text-white/60 line-through">{articles[3].promo?.prixOriginal}€</div>
             </div>
           </div>
         </div>
@@ -338,7 +280,7 @@ export default function Actualites() {
         {/* Other Articles */}
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Autres actualités</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {articles.slice(6).map((article) => (
+          {articles.slice(4).map((article) => (
             <div
               key={article.id}
               className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-shadow"

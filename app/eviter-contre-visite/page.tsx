@@ -98,17 +98,17 @@ export default function EviterContreVisite() {
       badge="Conseils Pratiques"
     >
       {/* Introduction */}
-      <div className="max-w-4xl mx-auto mb-12">
-        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 md:p-8">
+      <div className="max-w-6xl mx-auto mb-12">
+        <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 md:p-8">
           <div className="flex items-start gap-4">
-            <div className="p-3 bg-amber-100 rounded-xl shrink-0">
-              <AlertTriangle className="h-6 w-6 text-amber-600" />
+            <div className="p-3 bg-blue-100 rounded-xl shrink-0">
+              <AlertTriangle className="h-6 w-6 text-blue-600" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-amber-900 mb-2">
+              <h2 className="text-xl font-bold text-blue-900 mb-2">
                 Pourquoi préparer son véhicule ?
               </h2>
-              <p className="text-amber-800">
+              <p className="text-blue-800">
                 Une bonne préparation vous permet d'éviter une contre-visite coûteuse en temps et en argent.
                 Voici les points essentiels à vérifier avant de vous présenter au contrôle technique.
               </p>
@@ -139,7 +139,7 @@ export default function EviterContreVisite() {
               <div className="space-y-2">
                 {point.tips.map((tip, tipIndex) => (
                   <div key={tipIndex} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-blue-500 shrink-0" />
                     <span className="text-sm text-gray-700">{tip}</span>
                   </div>
                 ))}
@@ -150,7 +150,7 @@ export default function EviterContreVisite() {
       </div>
 
       {/* Call to Action */}
-      <div className="max-w-4xl mx-auto mt-12">
+      <div className="max-w-6xl mx-auto mt-12">
         <div className="bg-linear-to-r from-primary to-blue-600 rounded-2xl p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-4">
             Prêt pour votre contrôle technique ?

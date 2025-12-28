@@ -108,8 +108,8 @@ export default function Recrutement() {
           <h2 className="text-xl font-bold text-gray-900 mb-6">Pourquoi nous rejoindre ?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
-                <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
+              <div key={index} className="flex items-center gap-3 p-3 bg-blue-50 rounded-xl">
+                <CheckCircle2 className="h-5 w-5 text-blue-500 shrink-0" />
                 <span className="text-gray-700">{benefit}</span>
               </div>
             ))}

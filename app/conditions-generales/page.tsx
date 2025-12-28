@@ -166,8 +166,8 @@ export default function ConditionsGenerales() {
         {/* Contre-visite */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-8 mb-6">
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-amber-100 rounded-xl">
-              <AlertTriangle className="h-6 w-6 text-amber-600" />
+            <div className="p-3 bg-primary/10 rounded-xl">
+              <AlertTriangle className="h-6 w-6 text-primary" />
             </div>
             <h2 className="text-xl font-bold text-gray-900">Article 6 - Contre-visite</h2>
           </div>

@@ -78,9 +78,9 @@ export default function QuiSommesNous() {
                 et moto de qualité, tout en respectant l'environnement.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Avec deux centres en Île-de-France (Le Blanc-Mesnil et Ivry-sur-Seine), nous sommes
-                à votre service pour tous vos besoins en contrôle technique, du véhicule particulier
-                au camping-car, en passant par les deux-roues.
+                Avec deux centres de contrôle technique en Île-de-France <span className="font-bold">(AUTOSUR CTAM Le Blanc-Mesnil et AUTOSUR CTAM Ivry-sur-Seine)</span>, nous sommes
+                à votre service pour tous vos besoins en contrôle technique pour les véhicules particuliers jusqu'au
+                contrôle technique pour les camping-car, sans oublier le contrôle technqiue pour les deux-roues évidemment.
               </p>
             </div>
             <div className="shrink-0">
@@ -128,7 +128,7 @@ export default function QuiSommesNous() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((service, index) => (
               <div key={index} className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
-                <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
                 <span className="text-gray-700">{service}</span>
               </div>
             ))}
