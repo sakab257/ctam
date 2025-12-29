@@ -309,6 +309,7 @@ export const schedules: Schedule[] = [
 ]
 
 export const lbmInfo = {
+  name:"Le Blanc-Mesnil",
   address: "17 rue Corneille, 93150 Le Blanc-Mesnil",
   phone: "01 48 67 66 66",
   access: "À 2 minutes de la gare RER",
@@ -321,6 +322,7 @@ export const lbmInfo = {
 
 
 export const ivryInfo = {
+  name:"Ivry-sur-Seine",
   address: "3-5 bd Hippolyte Marquès, 94200 Ivry-sur-Seine",
   phone: "01 46 71 11 22",
   access: "À la Porte d'Ivry.",

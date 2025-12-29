@@ -7,6 +7,7 @@ import { Plus, Menu, Calendar, Clock, Phone, MapPin } from "lucide-react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { useState } from "react"
 import { schedules, lbmInfo, ivryInfo } from "@/lib/tarifs-data"
+import { Separator } from "../ui/separator";
 
 export const Navbar = () => {
     return (
@@ -139,35 +140,54 @@ export const MobileNav = () => {
                     <div className="border-t pt-6">
                         <h3 className="text-sm font-semibold text-gray-500 mb-4 px-4">Informations</h3>
                         <div className="flex flex-col gap-3 px-4">
-                            {/* Horaires */}
-                            <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                                <div className="p-2 bg-blue-100 rounded-lg shrink-0">
-                                    <Clock className="h-4 w-4 text-blue-600" aria-hidden="true" />
+                            <div className="flex flex-col bg-blue-50 rounded-lg">
+                                {/* Horaires */}
+                                <div className="flex items-center justify-start gap-3 p-3">
+                                    <div className="p-2 bg-blue-100 rounded-lg shrink-0">
+                                        <Clock className="h-4 w-4 text-blue-600" aria-hidden="true" />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-sm font-semibold text-gray-900">{lbmInfo.schedule.days}</span>
+                                        <span className="text-xs text-gray-600">{lbmInfo.schedule.hours}</span>
+                                    </div>
                                 </div>
-                                <div className="flex flex-col">
-                                    <span className="text-sm font-semibold text-gray-900">{schedules[0].days}</span>
-                                    <span className="text-xs text-gray-600">{schedules[0].hours}</span>
+                                <div className="w-full px-3">
+                                    <Separator />
+                                </div>
+                                {/* Adresse */}
+                                <div className="flex items-center gap-3 p-3">
+                                    <div className="p-2 bg-blue-100 rounded-lg shrink-0">
+                                        <MapPin className="h-4 w-4 text-blue-600" aria-hidden="true" />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-sm font-semibold text-gray-900">{lbmInfo.name}</span>
+                                        <span className="text-xs text-gray-600">{lbmInfo.address}</span>
+                                    </div>
                                 </div>
                             </div>
-
-                            {/* Adresse */}
-                            <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                                <div className="p-2 bg-blue-100 rounded-lg shrink-0">
-                                    <MapPin className="h-4 w-4 text-blue-600" aria-hidden="true" />
+                            <div className="flex flex-col bg-blue-50 rounded-lg">
+                                {/* Horaires */}
+                                <div className="flex items-center justify-start gap-3 p-3">
+                                    <div className="p-2 bg-blue-100 rounded-lg shrink-0">
+                                        <Clock className="h-4 w-4 text-blue-600" aria-hidden="true" />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-sm font-semibold text-gray-900">{ivryInfo.schedule.days}</span>
+                                        <span className="text-xs text-gray-600">{ivryInfo.schedule.hours}</span>
+                                    </div>
                                 </div>
-                                <div className="flex flex-col">
-                                    <span className="text-sm font-semibold text-gray-900">Le Blanc-Mesnil</span>
-                                    <span className="text-xs text-gray-600">{lbmInfo.address}</span>
+                                <div className="w-full px-3">
+                                    <Separator />
                                 </div>
-                            </div>
-
-                            <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                                <div className="p-2 bg-blue-100 rounded-lg shrink-0">
-                                    <MapPin className="h-4 w-4 text-blue-600" aria-hidden="true" />
-                                </div>
-                                <div className="flex flex-col">
-                                    <span className="text-sm font-semibold text-gray-900">Ivry-Sur-Seine</span>
-                                    <span className="text-xs text-gray-600">{ivryInfo.address}</span>
+                                {/* Adresse */}
+                                <div className="flex items-center gap-3 p-3">
+                                    <div className="p-2 bg-blue-100 rounded-lg shrink-0">
+                                        <MapPin className="h-4 w-4 text-blue-600" aria-hidden="true" />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-sm font-semibold text-gray-900">{ivryInfo.name}</span>
+                                        <span className="text-xs text-gray-600">{ivryInfo.address}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

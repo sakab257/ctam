@@ -46,7 +46,7 @@ const centers = {
       }
     ],
     agrements: {
-      auto: "S094S290",
+      auto: "S094S248",
       moto: "L094S330"
     }
   }
