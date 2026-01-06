@@ -25,15 +25,6 @@ const HeroCard = ({ icon: Icon, icon2: Icon2, hour, subhour, title, subtitle, co
         <div className="w-full bg-white rounded-xl shadow-lg p-4 border border-gray-100 hover:shadow-xl transition-all hover:-translate-y-1 group z-100 flex flex-col gap-2">
             <div className="flex items-center gap-3">
                 <div className={`p-2.5 ${colors.bg} rounded-lg group-hover:scale-110 transition-transform`}>
-                    <Icon className={`h-5 w-5 ${colors.text}`} aria-hidden="true" />
-                </div>
-                <div className="flex flex-col">
-                    <h3 className="text-sm font-semibold text-gray-900">{hour}</h3>
-                    {subtitle && <p className="text-[10px] text-gray-600">{subhour}</p>}
-                </div>
-            </div>
-            <div className="flex items-center gap-3">
-                <div className={`p-2.5 ${colors.bg} rounded-lg group-hover:scale-110 transition-transform`}>
                     <Icon2 className={`h-5 w-5 ${colors.text}`} aria-hidden="true" />
                 </div>
                 <div className="flex flex-col">
@@ -41,6 +32,16 @@ const HeroCard = ({ icon: Icon, icon2: Icon2, hour, subhour, title, subtitle, co
                     {subtitle && <p className="text-[10px] text-gray-600">{subtitle}</p>}
                 </div>
             </div>
+            <div className="flex items-center gap-3">
+                <div className={`p-2.5 ${colors.bg} rounded-lg group-hover:scale-110 transition-transform`}>
+                    <Icon className={`h-5 w-5 ${colors.text}`} aria-hidden="true" />
+                </div>
+                <div className="flex flex-col">
+                    <h3 className="text-sm font-semibold text-gray-900">{hour}</h3>
+                    {subtitle && <p className="text-[10px] text-gray-600">{subhour}</p>}
+                </div>
+            </div>
+            
         </div>
     )
 }

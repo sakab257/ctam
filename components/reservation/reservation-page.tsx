@@ -1,7 +1,9 @@
 "use client"
 
 import { Header } from "@/components/navigation/header"
-import { Footer, FooterMobile } from "@/components/navigation/footer"
+import { Footer } from "@/components/navigation/footer"
+import { FooterCentre } from "@/components/navigation/footer-centre"
+import { IframeWithLoader } from "@/components/reservation/iframe-with-loader"
 import { MapPin, Clock, Phone, ArrowLeft, Calendar, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -21,9 +23,11 @@ interface ReservationPageProps {
   center: CenterInfo
   iframeSrc?: string
   children?: React.ReactNode
+  dialogWidget?: React.ReactNode // Widget à afficher dans le dialog du footer mobile (pour iFrame)
+  useAutoplanning?: boolean // Pour Le Blanc-Mesnil, utilise le bouton Autoplanning natif
 }
 
-export const ReservationPage = ({ center, iframeSrc, children }: ReservationPageProps) => {
+export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, useAutoplanning }: ReservationPageProps) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -70,11 +74,10 @@ export const ReservationPage = ({ center, iframeSrc, children }: ReservationPage
                     // Widget Autoplanning passé en children
                     children
                   ) : iframeSrc ? (
-                    <iframe
+                    <IframeWithLoader
                       src={iframeSrc}
                       className="w-full h-150 md:h-175 lg:h-187.5 border-0"
                       title={`Réservation ${center.name}`}
-                      allow="payment"
                     />
                   ) : (
                     <div className="w-full h-150 md:h-175 lg:h-187.5 flex flex-col items-center justify-center p-8 bg-linear-to-br from-gray-50 to-blue-50">
@@ -186,7 +189,15 @@ export const ReservationPage = ({ center, iframeSrc, children }: ReservationPage
       </main>
 
       <Footer />
-      <FooterMobile />
+      {(dialogWidget || useAutoplanning) && (
+        <FooterCentre
+          phone={center.phone}
+          centerName={center.name}
+          useAutoplanning={useAutoplanning}
+        >
+          {dialogWidget}
+        </FooterCentre>
+      )}
     </div>
   )
 }

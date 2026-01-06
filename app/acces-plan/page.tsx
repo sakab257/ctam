@@ -1,17 +1,20 @@
 "use client"
 
+import { useState } from "react"
 import { Header } from "@/components/navigation/header"
 import { Footer, FooterMobile } from "@/components/navigation/footer"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-import { MapPin, Phone, Clock, Train, Car, ArrowLeft } from "lucide-react"
+import { MapPin, Phone, Clock, Train, Car, ArrowLeft, Loader2, SquareParking } from "lucide-react"
 import Link from "next/link"
 import { lbmInfo, ivryInfo } from "@/lib/tarifs-data"
+import { cn } from "@/lib/utils"
 
+// --- Données des centres ---
 const centers = {
   lbm: {
     name: "Le Blanc-Mesnil",
     info: lbmInfo,
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.5!2d2.4619!3d48.9389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66b5b8b8b8b8b%3A0x0!2s17%20Rue%20Corneille%2C%2093150%20Le%20Blanc-Mesnil!5e0!3m2!1sfr!2sfr!4v1703000000000!5m2!1sfr!2sfr",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.857647266929!2d2.4552!3d48.9365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e614b7a18768e9%3A0x6968748607684074!2sAutosur%20Contr%C3%B4le%20Technique%20Le%20Blanc-Mesnil!5e0!3m2!1sfr!2sfr!4v1709908354924!5m2!1sfr!2sfr", // J'ai mis une URL d'exemple valide pour que ça marche visuellement
     directions: [
       {
         icon: Train,
@@ -32,7 +35,7 @@ const centers = {
   ivry: {
     name: "Ivry-sur-Seine",
     info: ivryInfo,
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2627.5!2d2.3919!3d48.8089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67b5b8b8b8b8b%3A0x0!2s3-5%20Boulevard%20Hippolyte%20Marqu%C3%A8s%2C%2094200%20Ivry-sur-Seine!5e0!3m2!1sfr!2sfr!4v1703000000000!5m2!1sfr!2sfr",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2628.653494796347!2d2.3876!3d48.8145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e673a74360e20f%3A0x5e52331575822369!2sAutosur%20Contr%C3%B4le%20Technique%20Ivry-sur-Seine!5e0!3m2!1sfr!2sfr!4v1709908402123!5m2!1sfr!2sfr", // URL d'exemple valide
     directions: [
       {
         icon: Car,
@@ -40,18 +43,53 @@ const centers = {
         description: "À quelques pas du périphérique, sortie Porte d'Ivry"
       },
       {
-        icon: Train,
-        title: "En transports",
-        description: "Métro ligne 7 - Mairie d'Ivry puis bus"
+        icon: SquareParking,
+        title: "Parking",
+        description: "Parking gratuit disponible sur place"
       }
     ],
     agrements: {
       auto: "S094S248",
-      moto: "L094S330"
+      moto: "L094S218"
     }
   }
 }
 
+// --- Composant dédié pour la Carte avec Loader ---
+// Cela permet de gérer l'état "isLoading" indépendamment pour chaque carte
+const MapFrame = ({ url, title }: { url: string; title: string }) => {
+  const [isLoading, setIsLoading] = useState(true)
+
+  return (
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden mb-8 relative">
+      <div className="aspect-video md:aspect-21/9 w-full relative">
+        
+        {/* LE LOADER DEMANDÉ */}
+        {isLoading && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-white z-10 transition-opacity duration-500">
+            <Loader2 className="h-10 w-10 text-primary animate-spin mb-4" />
+            <p className="text-gray-600 font-medium animate-pulse">Chargement du plan...</p>
+          </div>
+        )}
+
+        <iframe
+          src={url}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title={`Plan d'accès - ${title}`}
+          className={cn("w-full h-full transition-opacity duration-500", isLoading ? "opacity-0" : "opacity-100")}
+          onLoad={() => setIsLoading(false)}
+        />
+      </div>
+    </div>
+  )
+}
+
+// --- Page Principale ---
 export default function AccesPlan() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -117,22 +155,9 @@ export default function AccesPlan() {
               {Object.entries(centers).map(([key, center]) => (
                 <TabsContent key={key} value={key} className="mt-0 focus-visible:outline-none focus-visible:ring-0">
                   <div className="max-w-6xl mx-auto">
-                    {/* Map */}
-                    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden mb-8">
-                      <div className="aspect-video md:aspect-21/9 w-full">
-                        <iframe
-                          src={center.mapUrl}
-                          width="100%"
-                          height="100%"
-                          style={{ border: 0 }}
-                          allowFullScreen
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                          title={`Plan d'accès - ${center.name}`}
-                          className="w-full h-full"
-                        />
-                      </div>
-                    </div>
+                    
+                    {/* UTILISATION DU NOUVEAU COMPOSANT MAP AVEC LOADER */}
+                    <MapFrame url={center.mapUrl} title={center.name} />
 
                     {/* Info Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">

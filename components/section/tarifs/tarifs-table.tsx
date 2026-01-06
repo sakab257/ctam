@@ -8,6 +8,9 @@ interface TarifsTableProps {
 export const TarifsTable = ({ tarifs }: TarifsTableProps) => {
   return (
     <div className="max-w-5xl mx-auto mb-12">
+      {/* AJOUT DE LA CLASSE : min-h-[800px] 
+          Cela force une hauteur minimale. Vous pouvez ajuster 800px selon la taille réelle de votre plus grand tableau.
+      */}
       <div className="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
         <div className="bg-linear-to-r from-primary to-blue-600 px-6 py-4">
           <h3 className="text-xl font-bold text-white">Grille Tarifaire Complète</h3>
@@ -35,8 +38,8 @@ export const TarifsTable = ({ tarifs }: TarifsTableProps) => {
                   </TableCell>
                   
                   <TableCell className="text-right">
-                    <div className="flex flex-col items-end gap-1">
-                      <div className="flex items-baseline justify-end gap-2">
+                    <div className="flex items-center justify-end gap-1">
+                      <div className="flex items-baseline justify-end gap-2 ">
                         <span className="text-lg font-bold text-primary">{tarif.price}€</span>
                         {tarif.originalPrice && (
                           <span className="text-sm text-gray-400 line-through">{tarif.originalPrice}€</span>

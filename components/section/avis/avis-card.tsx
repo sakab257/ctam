@@ -9,7 +9,7 @@ interface AvisCardProps {
 
 export const AvisCard = ({ avis }: AvisCardProps) => {
   return (
-    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white border-gray-200">
+    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white border-gray-200 h-full flex flex-col">
       <CardHeader className="pb-4">
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1">
@@ -41,8 +41,8 @@ export const AvisCard = ({ avis }: AvisCardProps) => {
         </div>
       </CardHeader>
 
-      <CardContent>
-        <p className="text-sm text-gray-700 leading-relaxed italic">
+      <CardContent className="flex-1">
+        <p className="text-sm text-gray-700 leading-relaxed italic line-clamp-4">
           "{avis.comment}"
         </p>
       </CardContent>

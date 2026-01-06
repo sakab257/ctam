@@ -69,7 +69,7 @@ export const AvisHeader = ({ stats, showTitle = true }: AvisHeaderProps) => {
                 </div>
                 <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-linear-to-r from-primary to-blue-600 rounded-full transition-all"
+                    className="h-full bg-linear-to-r from-primary to-blue-600 rounded-full"
                     style={{ width: `${percentage(stats.repartition[stars as keyof typeof stats.repartition])}%` }}
                   />
                 </div>

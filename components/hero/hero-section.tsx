@@ -67,6 +67,15 @@ const HeroSection = () => {
             </div>
         </div>
 
+        <div className='absolute top-20 right-40 hidden lg:block w-55 h-55'>
+            <Image src={'/logo.webp'} alt='Logo Autosur Controle Technique CTAM' fill className='object-cover'/>
+        </div>
+
+        {/* Logo mobile/tablette - taille responsive */}
+        <div className='absolute top-3 left-3 sm:top-8 sm:left-8 md:top-10 md:left-10 lg:hidden w-24 h-24 sm:w-30 sm:h-30 md:w-36 md:h-36'>
+            <Image src={'/logo.webp'} alt='Logo Autosur Controle Technique CTAM' fill className='object-contain'/>
+        </div>
+
         {/* Décoration de fond */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-30" aria-hidden="true">
             <div className="absolute top-20 right-20 w-72 h-72 bg-blue-200 rounded-full blur-3xl"></div>

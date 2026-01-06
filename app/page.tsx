@@ -4,6 +4,7 @@ import { FooterMobile, Footer } from "@/components/navigation/footer";
 import { Services } from "@/components/section/services/services";
 import Tarifs from "@/components/section/tarifs/tarifs";
 import Avis from "@/components/section/avis/avis";
+import { CenterProvider } from "@/contexts/center-context";
 
 export default function Home() {
   return (
@@ -12,8 +13,10 @@ export default function Home() {
       <main className="flex-1 w-full flex-col">
         <HeroSection />
         <Services />
-        <Tarifs />
-        <Avis />
+        <CenterProvider>
+          <Tarifs />
+          <Avis />
+        </CenterProvider>
       </main>
       <Footer />
       <FooterMobile />

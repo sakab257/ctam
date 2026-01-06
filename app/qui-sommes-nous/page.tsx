@@ -53,7 +53,7 @@ const centers = [
   {
     name: "CTAM AUTOSUR Ivry-sur-Seine",
     info: ivryInfo,
-    agrements: { auto: "S094S248", moto: "L094S330" }
+    agrements: { auto: "S094S248", moto: "L094S218" }
   }
 ]
 
