@@ -40,6 +40,9 @@ const HeroSection = () => {
 
             {/* Informations supplémentaires */}
             <HeroFeatures />
+            <p className="max-w-lg w-full text-base md:text-lg text-gray-600 text-shadow-2xs p-4 font-bold">
+                Contrôle Technique Auto & Moto
+            </p>
             </div>
         </div>
 
@@ -67,13 +70,8 @@ const HeroSection = () => {
             </div>
         </div>
 
-        <div className='absolute top-20 right-40 hidden lg:block w-55 h-55'>
+        <div className='absolute top-5 right-30 hidden lg:block w-75 h-75'>
             <Image src={'/logo.webp'} alt='Logo Autosur Controle Technique CTAM' fill className='object-cover'/>
-        </div>
-
-        {/* Logo mobile/tablette - taille responsive */}
-        <div className='absolute top-3 left-3 sm:top-8 sm:left-8 md:top-10 md:left-10 lg:hidden w-24 h-24 sm:w-30 sm:h-30 md:w-36 md:h-36'>
-            <Image src={'/logo.webp'} alt='Logo Autosur Controle Technique CTAM' fill className='object-contain'/>
         </div>
 
         {/* Décoration de fond */}

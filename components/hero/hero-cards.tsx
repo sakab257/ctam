@@ -1,5 +1,6 @@
-import { Clock, MapPin, LucideIcon } from 'lucide-react'
+import { Clock, MapPin, LucideIcon, Phone } from 'lucide-react'
 import { schedules, lbmInfo, ivryInfo } from '@/lib/tarifs-data'
+import Link from 'next/link'
 
 interface HeroCardProps {
     icon: LucideIcon
