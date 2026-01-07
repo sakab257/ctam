@@ -72,13 +72,13 @@ export const FooterCentre = ({ phone, centerName, children, useAutoplanning = fa
                     {/* Dialog pour iFrame (Ivry) */}
                     {!useAutoplanning && children && (
                         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-                            <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto p-0">
-                                <DialogHeader className="p-4 pb-0">
-                                    <DialogTitle className="text-center text-xl">
+                            <DialogContent className="max-w-md w-[calc(100%-2.5rem)] max-h-[70vh] top-[55%] overflow-hidden p-0 rounded-xl">
+                                <DialogHeader className="px-4 pt-3 pb-2 border-b border-gray-100">
+                                    <DialogTitle className="text-center text-base font-semibold">
                                         Réserver - {centerName}
                                     </DialogTitle>
                                 </DialogHeader>
-                                <div className="p-4">
+                                <div className="overflow-y-auto flex-1">
                                     {children}
                                 </div>
                             </DialogContent>
