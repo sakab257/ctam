@@ -59,7 +59,7 @@ export const statsLBM: StatsAvis = {
     2: 4,
     1: 3
   },
-  googleUrl: "https://www.google.com/search?q=cctam+le+blanc+mesnil"
+  googleUrl: "https://search.google.com/local/writereview?placeid=ChIJ1_oYOqYU5kcRwmIBjNTemc4"
 }
 
 // Avis Ivry-sur-Seine
@@ -103,7 +103,7 @@ export const statsIvry: StatsAvis = {
     2: 15,
     1: 15
   },
-  googleUrl: "https://www.google.com/search?q=tuv+dcta+ivry+sur+seine"
+  googleUrl: "https://search.google.com/local/writereview?placeid=ChIJt1sSuC1y5kcRH1zcYcE_Xg8"
 }
 
 // Export par défaut pour compatibilité
