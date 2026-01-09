@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/rdv-controle-technique-moto-ivry.html",
+        destination: "/",
+        permanent: true
+      }
     ]
   },
 };
