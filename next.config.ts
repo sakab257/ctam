@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         source: "/rdv-controle-technique-moto-ivry.html",
         destination: "/",
         permanent: true
+      },
+      {
+        source: "/controle-technique-le-blanc-mesnil.html",
+        destination: "/",
+        permanent: true
       }
     ]
   },
