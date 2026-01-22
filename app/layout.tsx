@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { poppins } from "@/lib/fonts";
 import { CookieBanner } from "@/components/cookies/cookie-banner";
@@ -48,6 +49,21 @@ export default function RootLayout({
       >
         {children}
         <CookieBanner />
+        {/* Chargement du script principal Google Tag */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-6Q6XBC9NRF"
+          strategy="afterInteractive"
+        />
+
+        {/* Initialisation de la configuration */}
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6Q6XBC9NRF');
+          `}
+        </Script>
       </body>
     </html>
   );
