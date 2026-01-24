@@ -73,19 +73,53 @@ export const FooterMobile = () => {
                             </div>
                         </DialogContent>
                     </Dialog>
-                    <Button
-                        asChild
-                        size="lg"
-                        className="flex-1 font-semibold shadow-md"
-                    >
-                        <Link
-                            href="/#hero-section"
-                            aria-label="Prendre rendez-vous en ligne pour un contrôle technique"
-                        >
-                            <Calendar className="h-5 w-5 mr-2" aria-hidden="true" />
-                            Prendre RDV
-                        </Link>
-                    </Button>
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <Button
+                                size="lg"
+                                className="flex-1 font-semibold shadow-md"
+                                aria-label="Choisir un centre pour prendre rendez-vous"
+                            >
+                                <Calendar className="h-5 w-5 mr-2" aria-hidden="true" />
+                                Prendre RDV
+                            </Button>
+                        </DialogTrigger>
+                        <DialogContent className="sm:max-w-md">
+                            <DialogHeader>
+                                <DialogTitle className="text-center text-xl">
+                                    Choisissez votre centre
+                                </DialogTitle>
+                            </DialogHeader>
+                            <div className="flex flex-col gap-3 mt-4">
+                                <Link
+                                    href="/le-blanc-mesnil"
+                                    className="flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-primary hover:bg-blue-50 transition-all group"
+                                >
+                                    <div className="p-3 bg-blue-100 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+                                        <MapPin className="h-5 w-5 text-primary group-hover:text-white" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <p className="font-semibold text-gray-900">Le Blanc-Mesnil</p>
+                                        <p className="text-xs text-gray-500">{lbmInfo.address}</p>
+                                    </div>
+                                    <Calendar className="h-5 w-5 text-primary" />
+                                </Link>
+                                <Link
+                                    href="/ivry-sur-seine"
+                                    className="flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-primary hover:bg-blue-50 transition-all group"
+                                >
+                                    <div className="p-3 bg-blue-100 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+                                        <MapPin className="h-5 w-5 text-primary group-hover:text-white" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <p className="font-semibold text-gray-900">Ivry-sur-Seine</p>
+                                        <p className="text-xs text-gray-500">{ivryInfo.address}</p>
+                                    </div>
+                                    <Calendar className="h-5 w-5 text-primary" />
+                                </Link>
+                            </div>
+                        </DialogContent>
+                    </Dialog>
                 </div>
             </div>
         </footer>
