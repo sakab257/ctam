@@ -65,10 +65,10 @@ export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, use
             </div>
 
             {/* Main content grid */}
-            <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+            <div className="flex flex-col gap-6 lg:gap-8 max-w-7xl mx-auto">
 
               {/* Widget / Iframe / Placeholder - Takes 2 columns on desktop */}
-              <div className="lg:col-span-2 order-2 lg:order-1">
+              <div className="order-2 lg:order-1">
                 <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
                   {children ? (
                     // Widget Autoplanning passé en children
@@ -76,7 +76,7 @@ export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, use
                   ) : iframeSrc ? (
                     <IframeWithLoader
                       src={iframeSrc}
-                      className="w-full h-150 md:h-175 lg:h-187.5 border-0"
+                      className="w-full h-330 md:h-175 lg:h-187.5 border-0"
                       title={`Réservation ${center.name}`}
                     />
                   ) : (
@@ -108,8 +108,13 @@ export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, use
                 </div>
               </div>
 
-              {/* Sidebar with center info */}
-              <div className="lg:col-span-1 order-1 lg:order-2 space-y-4">
+              
+            </div>
+          </div>
+          
+
+          {/* Sidebar with center info */}
+              <div className="order-1 lg:order-2 space-y-4 mt-8 mx-4">
                 {/* Center Info Card */}
                 <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
                   <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -179,12 +184,6 @@ export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, use
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Decorative elements */}
-          <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full blur-3xl opacity-20 pointer-events-none" aria-hidden="true" />
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-indigo-200 rounded-full blur-3xl opacity-15 pointer-events-none" aria-hidden="true" />
         </section>
       </main>
 
