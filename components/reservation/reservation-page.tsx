@@ -114,9 +114,9 @@ export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, use
           
 
           {/* Sidebar with center info */}
-              <div className="order-1 lg:order-2 space-y-4 mt-8 mx-4">
+              <div className="max-w-7xl order-1 lg:order-2 space-y-4 mt-8 px-4 flex flex-col mx-auto">
                 {/* Center Info Card */}
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-10">
                   <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
                     <MapPin className="h-5 w-5 text-primary" />
                     Informations du centre
