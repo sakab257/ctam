@@ -35,7 +35,7 @@ export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, use
       <main className="flex-1 w-full bg-linear-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}
         <section className="relative py-8 md:py-12 overflow-hidden">
-          <div className="container mx-auto px-4">
+          <div className="mx-auto px-4">
             {/* Back button */}
             <Link
               href="/"
@@ -65,7 +65,7 @@ export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, use
             </div>
 
             {/* Main content grid */}
-            <div className="flex flex-col gap-6 lg:gap-8 max-w-7xl mx-auto">
+            <div className="flex flex-col gap-6 lg:gap-8">
 
               {/* Widget / Iframe / Placeholder - Takes 2 columns on desktop */}
               <div className="order-2 lg:order-1">
@@ -114,9 +114,9 @@ export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, use
           
 
           {/* Sidebar with center info */}
-              <div className="max-w-7xl order-1 lg:order-2 space-y-4 mt-8 px-4 flex flex-col mx-auto">
+              <div className="order-1 lg:order-2 space-x-8 px-4 mt-8 flex flex-col gap-4 lg:flex-row lg:gap-0 justify-evenly">
                 {/* Center Info Card */}
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-10">
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-10 w-full">
                   <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
                     <MapPin className="h-5 w-5 text-primary" />
                     Informations du centre
@@ -166,7 +166,7 @@ export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, use
                 </div>
 
                 {/* Features Card */}
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 w-full">
                   <h2 className="text-lg font-bold text-gray-900 mb-4">Pourquoi nous choisir ?</h2>
 
                   <div className="space-y-3">
