@@ -117,6 +117,22 @@ const articles = [
     excerpt: "CTAM s'agrandit avec l'ouverture d'un second centre de contrôle technique sous l'enseigne AUTOSUR à Ivry-sur-Seine.",
     featured: false
   },
+  {
+  id: 10,
+  date: "10 avril 2026",
+  category: "Réglementation",
+  title: "Ce qui change au contrôle technique en 2026",
+  excerpt: "Nouvelles normes de pollution, points de contrôle supplémentaires, tarifs actualisés... Le contrôle technique automobile évolue en 2026. Tout ce qu'il faut savoir si vous êtes conducteur en Île-de-France, à Paris, au Blanc-Mesnil ou à Ivry-sur-Seine.",
+  featured: false
+},
+{
+  id: 11,
+  date: "24 avril 2026",
+  category: "Conseil",
+  title: "Les 5 défauts les plus fréquents au contrôle technique automobile",
+  excerpt: "Éclairage défectueux, freins usés, pneumatiques lisses... Des milliers de conducteurs en Île-de-France échouent leur contrôle technique pour des raisons évitables. Nos centres CTAM AUTOSUR au Blanc-Mesnil et à Ivry-sur-Seine vous révèlent les 5 points de défaillance les plus courants.",
+  featured: false
+},
 ]
 
 export default function Actualites() {
@@ -234,7 +250,7 @@ export default function Actualites() {
               <div className="text-4xl font-bold">{articles[1].concours?.valeur}€</div>
               <div className="text-sm mt-2 text-white/80">Week-end pour 2</div>
               <div className="mt-3 pt-3 border-t border-white/20 text-xs">
-                Jusqu'à fin décembre 2025
+                {`Jusqu'à fin décembre 2025`}
               </div>
             </div>
           </div>
@@ -280,7 +296,7 @@ export default function Actualites() {
         {/* Other Articles */}
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Autres actualités</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {articles.slice(4).map((article) => (
+          {articles.slice(4).reverse().map((article) => (
             <div
               key={article.id}
               className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-shadow"
