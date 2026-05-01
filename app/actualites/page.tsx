@@ -133,6 +133,22 @@ const articles = [
   excerpt: "Éclairage défectueux, freins usés, pneumatiques lisses... Des milliers de conducteurs en Île-de-France échouent leur contrôle technique pour des raisons évitables. Nos centres CTAM AUTOSUR au Blanc-Mesnil et à Ivry-sur-Seine vous révèlent les 5 points de défaillance les plus courants.",
   featured: false
 },
+{
+  id: 12,
+  date: "27 avril 2026",
+  category: "Conseil",
+  title: "Comment éviter la contre-visite : nos conseils avant votre contrôle technique",
+  excerpt: "La contre-visite concerne près de 20% des véhicules. Vérifiez ces points clés avant de passer le contrôle technique automobile au Blanc-Mesnil ou à Ivry-sur-Seine et mettez toutes les chances de votre côté.",
+  featured: false
+},
+{
+  id: 13,
+  date: "1er mai 2026",
+  category: "Information",
+  title: "Que risquez-vous si vous roulez sans contrôle technique valide ?",
+  excerpt: "Amende de 135€, immobilisation du véhicule, refus d'assurance en cas d'accident... Rouler sans contrôle technique automobile expose à de lourdes sanctions. Prenez rendez-vous dans nos centres au Blanc-Mesnil ou à Ivry-sur-Seine avant qu'il ne soit trop tard.",
+  featured: false
+},
 ]
 
 export default function Actualites() {
