@@ -149,6 +149,119 @@ const articles = [
   excerpt: "Amende de 135€, immobilisation du véhicule, refus d'assurance en cas d'accident... Rouler sans contrôle technique automobile expose à de lourdes sanctions. Prenez rendez-vous dans nos centres au Blanc-Mesnil ou à Ivry-sur-Seine avant qu'il ne soit trop tard.",
   featured: false
 },
+{
+  id: 14,
+  date: "8 mai 2026",
+  category: "Conseil",
+  title: "Vendre son véhicule d'occasion : le contrôle technique est obligatoire",
+  excerpt: "Pour vendre une voiture de plus de 4 ans à un particulier, le procès-verbal de contrôle technique automobile doit dater de moins de 6 mois. Nos centres CTAM AUTOSUR au Blanc-Mesnil et à Ivry-sur-Seine vous délivrent votre PV sur place, en Île-de-France.",
+  featured: false
+},
+{
+  id: 15,
+  date: "15 mai 2026",
+  category: "Réglementation",
+  title: "Défaillance mineure, majeure ou critique : comprendre votre procès-verbal",
+  excerpt: "Favorable, défavorable, code S ou code R : que signifient réellement les mentions de votre contrôle technique ? Nos contrôleurs agréés du Blanc-Mesnil et d'Ivry-sur-Seine décryptent chaque ligne de votre rapport et vous expliquent vos droits de circulation.",
+  featured: false
+},
+{
+  id: 16,
+  date: "22 mai 2026",
+  category: "Information",
+  title: "Combien coûte un contrôle technique automobile en Île-de-France ?",
+  excerpt: "Les prix du contrôle technique sont libres et non réglementés. Motorisation, type de véhicule, contre-visite : découvrez ce qui fait varier le tarif et nos prix pratiqués dans nos centres AUTOSUR du Blanc-Mesnil (93) et d'Ivry-sur-Seine (94).",
+  featured: false
+},
+{
+  id: 17,
+  date: "29 mai 2026",
+  category: "Conseil",
+  title: "Préparer son véhicule la veille du contrôle technique : la checklist",
+  excerpt: "Feux, essuie-glaces, pneumatiques, niveaux, klaxon, coffre vidé : 10 vérifications simples à faire chez vous avant votre rendez-vous. Les conducteurs de Drancy, Le Bourget, Vitry-sur-Seine ou Charenton-le-Pont gagnent un temps précieux avec ce réflexe.",
+  featured: false
+},
+{
+  id: 18,
+  date: "5 juin 2026",
+  category: "Réglementation",
+  title: "Contrôle technique moto : les véhicules immatriculés en 2020 et 2021 concernés",
+  excerpt: "L'échéance 2026 concerne les deux-roues motorisés mis en circulation entre le 1er janvier 2020 et le 31 décembre 2021. Motos, scooters, trois-roues et voitures sans permis : faites le point avec nos centres CTAM AUTOSUR en Seine-Saint-Denis et Val-de-Marne.",
+  featured: false
+},
+{
+  id: 19,
+  date: "12 juin 2026",
+  category: "Réglementation",
+  title: "Voiture électrique et hybride : comment se passe le contrôle technique ?",
+  excerpt: "Depuis 2026, le contrôle technique des véhicules 100% électriques inclut la vérification de l'état de santé de la batterie de traction via le diagnostic embarqué. Nos centres du Blanc-Mesnil et d'Ivry-sur-Seine sont équipés pour votre véhicule électrifié.",
+  featured: false
+},
+{
+  id: 20,
+  date: "19 juin 2026",
+  category: "Information",
+  title: "ZFE du Grand Paris : quel lien avec votre contrôle technique ?",
+  excerpt: "Vignette Crit'Air, restrictions de circulation dans la métropole parisienne, normes antipollution : ce que les automobilistes d'Île-de-France doivent savoir. Un contrôle technique automobile à jour reste la base pour circuler sereinement à Paris et en petite couronne.",
+  featured: false
+},
+{
+  id: 21,
+  date: "26 juin 2026",
+  category: "Conseil",
+  title: "Départ en vacances : anticipez votre contrôle technique automobile",
+  excerpt: "Partir sur l'autoroute avec un contrôle technique qui expire en plein mois d'août, c'est le mauvais plan. Vérifiez votre date d'échéance et réservez votre créneau dès maintenant dans nos centres du Blanc-Mesnil et d'Ivry-sur-Seine avant l'affluence de juillet.",
+  featured: false
+},
+{
+  id: 22,
+  date: "3 juillet 2026",
+  category: "Information",
+  title: "Horaires d'été : nos centres CTAM AUTOSUR restent ouverts",
+  excerpt: "Nos deux centres de contrôle technique automobile du Blanc-Mesnil et d'Ivry-sur-Seine vous accueillent tout l'été. Retrouvez nos horaires d'ouverture de juillet et août et réservez votre rendez-vous en ligne en quelques clics.",
+  featured: false
+},
+{
+  id: 23,
+  date: "10 juillet 2026",
+  category: "Conseil",
+  title: "Pneus, freins, amortisseurs : les 3 organes qui font échouer le contrôle",
+  excerpt: "Profondeur de sculpture, déséquilibre de freinage, amortisseurs fatigués : comment tester vous-même ces trois points avant votre contrôle technique. Entre les nids-de-poule et les ralentisseurs d'Île-de-France, les trains roulants souffrent vite.",
+  featured: false
+},
+{
+  id: 24,
+  date: "17 juillet 2026",
+  category: "Réglementation",
+  title: "Rappels constructeurs et airbags Takata : ce que vérifie le contrôleur",
+  excerpt: "Depuis le 1er janvier 2026, votre véhicule est signalé s'il fait l'objet d'un rappel grave. Un airbag Takata classé stop drive entraîne une contre-visite automatique et l'interdiction de circuler. Vérifiez votre immatriculation avant votre rendez-vous.",
+  featured: false
+},
+{
+  id: 25,
+  date: "24 juillet 2026",
+  category: "Conseil",
+  title: "Test antipollution : comment mettre toutes les chances de votre côté",
+  excerpt: "Diesel ou essence, la mesure des émissions fait échouer de nombreux véhicules qui ne roulent qu'en ville. Faites une trentaine de kilomètres sur voie rapide et venez moteur chaud dans nos centres du Blanc-Mesnil et d'Ivry-sur-Seine : le résultat change du tout au tout.",
+  featured: false
+},
+{
+  id: 26,
+  date: "31 juillet 2026",
+  category: "Information",
+  title: "Contre-visite : vous avez 2 mois, pas un jour de plus",
+  excerpt: "Le délai pour repasser après un résultat défavorable est de deux mois à compter de la date du contrôle technique périodique. Au-delà, il faut repayer un contrôle complet. Nos centres CTAM AUTOSUR vous reçoivent rapidement pour votre contre-visite.",
+  featured: false
+},
+{
+  id: 27,
+  date: "7 août 2026",
+  category: "Conseil",
+  title: "Fortes chaleurs : les points à surveiller sur votre véhicule",
+  excerpt: "Pression des pneumatiques, liquide de refroidissement, batterie, climatisation : la canicule met les véhicules à rude épreuve en Île-de-France. Quelques vérifications simples pour éviter la panne et arriver serein à votre contrôle technique automobile.",
+  featured: false
+},
+
 ]
 
 export default function Actualites() {

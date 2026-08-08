@@ -14,7 +14,9 @@ const centers = {
   lbm: {
     name: "Le Blanc-Mesnil",
     info: lbmInfo,
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.857647266929!2d2.4552!3d48.9365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e614b7a18768e9%3A0x6968748607684074!2sAutosur%20Contr%C3%B4le%20Technique%20Le%20Blanc-Mesnil!5e0!3m2!1sfr!2sfr!4v1709908354924!5m2!1sfr!2sfr", // J'ai mis une URL d'exemple valide pour que ça marche visuellement
+    // Coordonnées du marqueur Google (!3d/!4d de l'URL de partage), pas le centre de vue (@...)
+    mapUrl: "https://www.google.com/maps?q=AUTOSUR+CTAM+Contr%C3%B4le+Technique+Le+Blanc-Mesnil,+17+rue+Corneille,+93150+Le+Blanc-Mesnil&ll=48.937072,2.476049&z=17&hl=fr&output=embed",
+    mapLink: "https://www.google.com/maps/place/AUTOSUR+CTAM+Contr%C3%B4le+Technique+Le+Blanc-Mesnil/@48.937072,2.476049,17z/data=!4m6!3m5!1s0x47e614a63a18fad7:0xce99ded48c0162c2!8m2!3d48.937072!4d2.476049!16s%2Fg%2F1tj1rcm3?hl=fr",
     directions: [
       {
         icon: Train,
@@ -35,7 +37,8 @@ const centers = {
   ivry: {
     name: "Ivry-sur-Seine",
     info: ivryInfo,
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2628.653494796347!2d2.3876!3d48.8145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e673a74360e20f%3A0x5e52331575822369!2sAutosur%20Contr%C3%B4le%20Technique%20Ivry-sur-Seine!5e0!3m2!1sfr!2sfr!4v1709908402123!5m2!1sfr!2sfr", // URL d'exemple valide
+    mapUrl: "https://www.google.com/maps?q=AUTOSUR+CTAM+Contr%C3%B4le+Technique+Autosur+Ivry-sur-Seine+-+Auto+et+Moto,+3-5+bd+Hippolyte+Marqu%C3%A8s,+94200+Ivry-sur-Seine&ll=48.8190911,2.3730322&z=17&hl=fr&output=embed",
+    mapLink: "https://www.google.com/maps/place/AUTOSUR+CTAM+Contr%C3%B4le+Technique+Autosur+Ivry-sur-Seine+-+Auto+et+Moto/@48.8190911,2.3730322,17z/data=!4m6!3m5!1s0x47e6722db8125bb7:0xf5e3fc161dc5c1f!8m2!3d48.8190911!4d2.3730322!16s%2Fg%2F1tfmh3r4?hl=fr",
     directions: [
       {
         icon: Car,
@@ -57,7 +60,7 @@ const centers = {
 
 // --- Composant dédié pour la Carte avec Loader ---
 // Cela permet de gérer l'état "isLoading" indépendamment pour chaque carte
-const MapFrame = ({ url, title }: { url: string; title: string }) => {
+const MapFrame = ({ url, link, title }: { url: string; link: string; title: string }) => {
   const [isLoading, setIsLoading] = useState(true)
 
   return (
@@ -85,6 +88,17 @@ const MapFrame = ({ url, title }: { url: string; title: string }) => {
           onLoad={() => setIsLoading(false)}
         />
       </div>
+
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center gap-2 py-3 text-sm font-semibold text-primary
+          hover:bg-blue-50 transition-all duration-300"
+      >
+        <MapPin className="h-4 w-4" />
+        Ouvrir dans Google Maps
+      </a>
     </div>
   )
 }
@@ -103,7 +117,7 @@ export default function AccesPlan() {
               className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              Retour à l'accueil
+              {`Retour à l'accueil`}
             </Link>
             <div className="inline-block mb-4 ml-4">
               <span className="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm">
@@ -157,7 +171,7 @@ export default function AccesPlan() {
                   <div className="max-w-6xl mx-auto">
                     
                     {/* UTILISATION DU NOUVEAU COMPOSANT MAP AVEC LOADER */}
-                    <MapFrame url={center.mapUrl} title={center.name} />
+                    <MapFrame url={center.mapUrl} link={center.mapLink} title={center.name} />
 
                     {/* Info Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -241,7 +255,7 @@ export default function AccesPlan() {
                         Prêt à nous rendre visite ?
                       </h2>
                       <p className="text-white/90 mb-6">
-                        Prenez rendez-vous en ligne pour éviter l'attente.
+                        {`Prenez rendez-vous en ligne pour éviter l'attente.`}
                       </p>
                       <Link
                         href="/#hero-section"

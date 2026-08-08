@@ -50,10 +50,10 @@ export const avisLBM: Avis[] = [
 ]
 
 export const statsLBM: StatsAvis = {
-  totalAvis: 351,
+  totalAvis: 373,
   noteMoyenne: 4.8,
   repartition: {
-    5: 351,
+    5: 373,
     4: 53,
     3: 6,
     2: 4,
@@ -94,10 +94,10 @@ export const avisIvry: Avis[] = [
 ]
 
 export const statsIvry: StatsAvis = {
-  totalAvis: 620,
-  noteMoyenne: 4.6,
+  totalAvis: 709,
+  noteMoyenne: 4.7,
   repartition: {
-    5: 620,
+    5: 709,
     4: 85,
     3: 30,
     2: 15,
