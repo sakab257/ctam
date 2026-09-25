@@ -261,6 +261,55 @@ const articles = [
   excerpt: "Pression des pneumatiques, liquide de refroidissement, batterie, climatisation : la canicule met les véhicules à rude épreuve en Île-de-France. Quelques vérifications simples pour éviter la panne et arriver serein à votre contrôle technique automobile.",
   featured: false
 },
+  {
+  id: 28,
+  date: "21 août 2026",
+  category: "Conseil",
+  title: "Rentrée : c'est le bon moment pour votre contrôle technique",
+  excerpt: "Septembre est l'un des mois les plus chargés dans les centres de contrôle technique. Prenez de l'avance et réservez dès la fin août votre créneau au Blanc-Mesnil ou à Ivry-sur-Seine pour choisir votre horaire plutôt que de le subir.",
+  featured: false
+},
+{
+  id: 29,
+  date: "28 août 2026",
+  category: "Conseil",
+  title: "Acheter une voiture d'occasion : savoir lire le procès-verbal",
+  excerpt: "Date du contrôle, défaillances mineures, kilométrage relevé : le PV de contrôle technique automobile en dit long sur l'état réel du véhicule. Nos conseils pour acheter sans mauvaise surprise, et le contrôle volontaire avant achat proposé dans nos centres.",
+  featured: false
+},
+{
+  id: 30,
+  date: "4 septembre 2026",
+  category: "Conseil",
+  title: "Voyants au tableau de bord : lesquels bloquent le contrôle technique ?",
+  excerpt: "Voyant moteur, ABS, airbag, ESP : un témoin allumé est relevé lors du contrôle technique automobile. Et masquer un voyant est considéré comme une fraude. Faites diagnostiquer avant de venir dans nos centres du Blanc-Mesnil ou d'Ivry-sur-Seine.",
+  featured: false
+},
+{
+  id: 31,
+  date: "11 septembre 2026",
+  category: "Conseil",
+  title: "Éclairage : le premier motif de contre-visite en France",
+  excerpt: "Une ampoule de stop grillée, un phare mal réglé, un feu de plaque hors service suffisent à faire basculer votre contrôle technique en défavorable. Avec les journées qui raccourcissent, c'est le moment de tout vérifier feu par feu.",
+  featured: false
+},
+{
+  id: 32,
+  date: "18 septembre 2026",
+  category: "Réglementation",
+  title: "Voitures sans permis et quadricycles : le contrôle technique obligatoire",
+  excerpt: "Les voiturettes et quadricycles à moteur sont soumis au contrôle technique au même titre que les deux-roues motorisés. Périodicité, points vérifiés, tarifs : le guide complet pour les conducteurs d'Île-de-France, à Paris et en petite couronne.",
+  featured: false
+},
+{
+  id: 33,
+  date: "25 septembre 2026",
+  category: "Information",
+  title: "Contrôle technique périmé : amende, immobilisation et assurance",
+  excerpt: "135 euros d'amende forfaitaire, immobilisation possible du véhicule, rétention de la carte grise et risque de refus de prise en charge par votre assureur en cas d'accident. Ne prenez pas ce risque : réservez votre contrôle technique automobile dès aujourd'hui.",
+  featured: false
+},
+
 
 ]
 
