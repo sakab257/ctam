@@ -309,6 +309,31 @@ const articles = [
   excerpt: "135 euros d'amende forfaitaire, immobilisation possible du véhicule, rétention de la carte grise et risque de refus de prise en charge par votre assureur en cas d'accident. Ne prenez pas ce risque : réservez votre contrôle technique automobile dès aujourd'hui.",
   featured: false
 },
+{
+  id: 34,
+  date: "2 octobre 2026",
+  category: "Conseil",
+  title: "Votre véhicule ne roule presque plus ? Attention à l'encrassement",
+  excerpt: "Trajets domicile-travail de quelques kilomètres entre Aulnay-sous-Bois et Le Bourget, ou entre Vitry-sur-Seine et Paris : le moteur n'atteint jamais sa température optimale et l'échappement s'encrasse. Un vrai piège au moment du contrôle antipollution.",
+  featured: false
+},
+{
+  id: 35,
+  date: "9 octobre 2026",
+  category: "Conseil",
+  title: "Pneus hiver : ce que dit la réglementation et ce que vérifie le contrôleur",
+  excerpt: "Obligations dans les zones montagneuses, monte homogène par essieu, profondeur minimale de 1,6 mm : nos contrôleurs agréés font le point avant l'hiver. Nos centres CTAM AUTOSUR au Blanc-Mesnil et à Ivry-sur-Seine vous conseillent.",
+  featured: false
+},
+{
+  id: 36,
+  date: "23 octobre 2026",
+  category: "Conseil",
+  title: "Passage à l'heure d'hiver : visibilité et sécurité de votre véhicule",
+  excerpt: "Avec la nuit qui tombe plus tôt, l'état de vos feux, de votre pare-brise et de vos essuie-glaces devient critique. Trois vérifications rapides à faire ce week-end, avant votre prochain contrôle technique automobile en Île-de-France.",
+  featured: false
+},
+
 
 
 ]
