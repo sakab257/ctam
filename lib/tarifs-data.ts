@@ -1,4 +1,5 @@
 import { Car, Truck, Zap, Fuel, ClipboardCheck, Home } from "lucide-react"
+import { centers, type Center } from "@/lib/site"
 
 export interface Tarif {
   id: string
@@ -298,37 +299,23 @@ export interface Schedule {
 }
 
 export const schedules: Schedule[] = [
-  {
-    days: "Lundi au Samedi",
-    hours: "9h - 18h"
-  },
-  {
-    days: "Lundi au Samedi",
-    hours: "8h - 18h"
-  }
+  { days: centers.lbm.schedule.days, hours: centers.lbm.schedule.hours },
+  { days: centers.ivry.schedule.days, hours: centers.ivry.schedule.hours },
 ]
 
-export const lbmInfo = {
-  name:"Le Blanc-Mesnil",
-  address: "17 rue Corneille, 93150 Le Blanc-Mesnil",
-  phone: "01 48 67 66 66",
-  access: "À 2 minutes de la gare RER",
-  promoNote: "Remise de 4 € pour véhicule particulier - Valable uniquement sur créneaux spécifiques internet",
+const toCenterInfo = (center: Center) => ({
+  name: center.name,
+  address: center.addressLine,
+  phone: center.phone,
+  access: center.access,
+  promoNote: center.promoNote,
   schedule: {
-    days: "Lundi au Samedi",
-    hours: "9h - 18h"
-  } as Schedule
-}
+    days: center.schedule.days,
+    hours: center.schedule.hours,
+  } as Schedule,
+})
 
+// Infos centres : dérivées de lib/site.ts (source unique NAP)
+export const lbmInfo = toCenterInfo(centers.lbm)
 
-export const ivryInfo = {
-  name:"Ivry-sur-Seine",
-  address: "3-5 bd Hippolyte Marquès, 94200 Ivry-sur-Seine",
-  phone: "01 46 71 11 22",
-  access: "À la Porte d'Ivry.",
-  promoNote: "Remise de 5 € pour véhicule particulier - Valable uniquement sur créneaux spécifiques internet",
-  schedule: {
-    days: "Lundi au Samedi",
-    hours: "8h - 18h"
-  } as Schedule
-}
+export const ivryInfo = toCenterInfo(centers.ivry)
