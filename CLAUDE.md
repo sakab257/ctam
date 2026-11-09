@@ -19,9 +19,20 @@ Site vitrine pour **CTAM** (Centre de Contrôle Technique Automobile) avec deux 
 
 ## Structure des Données
 
+### Infos centres et site (`lib/site.ts`) — source unique
+- `siteConfig` : nom, URL canonique (`https://www.ctamcontrole.fr`), réseaux sociaux, ID GA4
+- `centers.lbm` / `centers.ivry` : NAP, horaires (affichage + format JSON-LD), GPS, agréments, cartes, zones desservies
+- Toute modification d'adresse / téléphone / horaires se fait ICI (footer, metadata, JSON-LD, pages en dépendent)
+
+### SEO (`lib/seo.ts`, `components/seo/json-ld.tsx`)
+- `buildMetadata({ title, description, path })` : à utiliser dans chaque nouvelle page (canonical, OG, Twitter)
+- JSON-LD : `organizationJsonLd`, `websiteJsonLd`, `centerJsonLd(id)`, `breadcrumbJsonLd`
+- `PageLayout` accepte `path` pour générer le fil d'Ariane JSON-LD
+- Toute nouvelle page indexable doit être ajoutée dans `app/sitemap.ts`
+
 ### Tarifs (`lib/tarifs-data.ts`)
 - `tarifsLBM` / `tarifsIvry` : Tableaux de tarifs par centre
-- `lbmInfo` / `ivryInfo` : Infos du centre (adresse, téléphone, promoNote)
+- `lbmInfo` / `ivryInfo` : Infos du centre, dérivées de `lib/site.ts`
 - Les tarifs sont différents entre les deux centres
 
 ### Avis (`lib/avis-data.ts`)
@@ -131,10 +142,10 @@ Le widget Autoplanning avait des erreurs CORS car leur script `load-agenda-scrip
 - [x] Tabs pour switcher entre les centres (Tarifs, Avis)
 
 ### À faire (post-déploiement)
-- [ ] **Google Analytics 4** - Tracking du trafic
+- [x] **Google Analytics 4** - Chargé après consentement (`components/analytics/google-analytics.tsx`), événements `clic_rdv` / `clic_appel`
 - [ ] **Google Tag Manager** - Gestion des tags
 - [ ] **Tracking de conversion AdWords** - Mesurer les réservations
-- [ ] **Schema.org JSON-LD** - Rich snippets Google (LocalBusiness, AggregateRating)
-- [ ] **Images Open Graph** - Optimiser les partages sociaux (1200x630px)
+- [x] **Schema.org JSON-LD** - Organization, WebSite, AutomotiveBusiness par centre, BreadcrumbList (pas d'AggregateRating : non affiché par Google pour des avis auto-publiés)
+- [x] **Images Open Graph** - Générée par `app/opengraph-image.tsx` (à remplacer par une photo réelle si disponible)
 - [ ] **Optimiser ours.webp** - Réduire de 316K à <100K
 - [ ] **Headers de sécurité** - Configurer dans next.config.ts
