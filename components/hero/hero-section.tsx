@@ -53,8 +53,8 @@ const HeroSection = () => {
                 alt="Image de la mascotte d'Autosur"
                 width={700}
                 height={700}
+                sizes="520px"
                 className="object-contain w-full h-auto transition-all"
-                priority
             />
         </div>
 
@@ -71,7 +71,7 @@ const HeroSection = () => {
         </div>
 
         <div className='absolute top-5 right-30 hidden lg:block w-75 h-75'>
-            <Image src={'/logo.webp'} alt='Logo Autosur Controle Technique CTAM' fill className='object-cover'/>
+            <Image src={'/logo.webp'} alt='Logo Autosur Controle Technique CTAM' fill sizes='300px' className='object-cover'/>
         </div>
 
         {/* Décoration de fond */}
