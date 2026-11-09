@@ -2,17 +2,21 @@ import { Header } from "@/components/navigation/header"
 import { Footer, FooterMobile } from "@/components/navigation/footer"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld"
 
 interface PageLayoutProps {
   children: React.ReactNode
   title: string
   subtitle?: string
   badge?: string
+  /** Chemin de la page : génère le fil d'Ariane JSON-LD (Accueil > titre) */
+  path?: string
 }
 
-export function PageLayout({ children, title, subtitle, badge }: PageLayoutProps) {
+export function PageLayout({ children, title, subtitle, badge, path }: PageLayoutProps) {
   return (
     <div className="flex flex-col min-h-screen">
+      {path && <BreadcrumbJsonLd items={[{ name: title, path }]} />}
       <Header />
       <main className="flex-1 w-full">
         {/* Hero Header */}

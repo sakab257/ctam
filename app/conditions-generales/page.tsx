@@ -1,15 +1,19 @@
 import { PageLayout } from "@/components/layout/page-layout"
+import { buildMetadata } from "@/lib/seo"
 import { FileText, Calendar, CreditCard, AlertTriangle, CheckCircle2, XCircle, Scale } from "lucide-react"
 import { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Conditions Générales | CTAM - Contrôle Technique",
-  description: "Conditions générales d'utilisation et de vente du site CTAM - Centre de Contrôle Technique Automobile.",
-}
+export const metadata: Metadata = buildMetadata({
+  title: "Conditions générales",
+  description:
+    "Conditions générales d'utilisation et de vente de CTAM : prise de rendez-vous, tarifs, paiement, déroulement du contrôle technique et contre-visite.",
+  path: "/conditions-generales",
+})
 
 export default function ConditionsGenerales() {
   return (
     <PageLayout
+      path="/conditions-generales"
       title="Conditions Générales"
       subtitle="Conditions générales d'utilisation et de vente applicables aux services CTAM."
       badge="CGU/CGV"

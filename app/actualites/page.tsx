@@ -1,12 +1,15 @@
 import { PageLayout } from "@/components/layout/page-layout"
+import { buildMetadata } from "@/lib/seo"
 import { Newspaper, Calendar, Bike, Clock, CheckCircle2, ArrowRight, Gift } from "lucide-react"
 import { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  title: "Actualités | CTAM - Contrôle Technique",
-  description: "Suivez les dernières actualités du contrôle technique : nouvelles réglementations, conseils et informations pratiques.",
-}
+export const metadata: Metadata = buildMetadata({
+  title: "Actualités et conseils sur le contrôle technique",
+  description:
+    "Réglementation, conseils d'entretien, promotions et infos pratiques de nos centres de contrôle technique AUTOSUR du Blanc-Mesnil et d'Ivry-sur-Seine.",
+  path: "/actualites",
+})
 
 const articles = [
   // Article featured (index 0) - CT 2 roues
@@ -341,6 +344,7 @@ const articles = [
 export default function Actualites() {
   return (
     <PageLayout
+      path="/actualites"
       title="Actualités"
       subtitle="Restez informé des dernières nouveautés du contrôle technique et de nos centres."
       badge="News"

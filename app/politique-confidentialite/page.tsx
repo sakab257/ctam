@@ -1,16 +1,20 @@
 import { PageLayout } from "@/components/layout/page-layout"
+import { buildMetadata } from "@/lib/seo"
 import { Shield, Database, Lock, UserCheck, Mail, Clock, FileText } from "lucide-react"
 import { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  title: "Politique de Confidentialité | CTAM - Contrôle Technique",
-  description: "Politique de confidentialité et protection des données personnelles du site CTAM.",
-}
+export const metadata: Metadata = buildMetadata({
+  title: "Politique de confidentialité",
+  description:
+    "Politique de confidentialité du site CTAM : données collectées, finalités, durée de conservation et exercice de vos droits (RGPD).",
+  path: "/politique-confidentialite",
+})
 
 export default function PolitiqueConfidentialite() {
   return (
     <PageLayout
+      path="/politique-confidentialite"
       title="Politique de Confidentialité"
       subtitle="Comment nous collectons, utilisons et protégeons vos données personnelles."
       badge="RGPD"

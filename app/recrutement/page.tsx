@@ -1,13 +1,16 @@
 import { PageLayout } from "@/components/layout/page-layout"
+import { buildMetadata } from "@/lib/seo"
 import { Briefcase, GraduationCap, Users, Mail, Phone, MapPin, CheckCircle2, Send } from "lucide-react"
 import { Metadata } from "next"
 import Link from "next/link"
 import { lbmInfo } from "@/lib/tarifs-data"
 
-export const metadata: Metadata = {
-  title: "Recrutement | CTAM - Contrôle Technique",
-  description: "Rejoignez l'équipe CTAM ! Nous recrutons des contrôleurs techniques automobile et moto. Postulez dès maintenant.",
-}
+export const metadata: Metadata = buildMetadata({
+  title: "Recrutement contrôleur technique auto (93 et 94)",
+  description:
+    "CTAM recrute des contrôleurs techniques auto et moto, confirmés, débutants ou en reconversion, pour ses centres AUTOSUR du Blanc-Mesnil et d'Ivry-sur-Seine.",
+  path: "/recrutement",
+})
 
 const profiles = [
   {
@@ -40,6 +43,7 @@ const benefits = [
 export default function Recrutement() {
   return (
     <PageLayout
+      path="/recrutement"
       title="Recrutement"
       subtitle="Rejoignez une équipe passionnée et participez à la sécurité routière au quotidien."
       badge="Carrières"

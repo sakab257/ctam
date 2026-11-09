@@ -1,12 +1,15 @@
 import { PageLayout } from "@/components/layout/page-layout"
+import { buildMetadata } from "@/lib/seo"
 import { Calendar, Clock, AlertCircle, Car, Truck, Ambulance, CheckCircle2, Bike } from "lucide-react"
 import { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  title: "Quand Passer Votre Contrôle Technique | CTAM",
-  description: "Découvrez quand passer votre contrôle technique : premier contrôle, validité, contre-visite et cas particuliers.",
-}
+export const metadata: Metadata = buildMetadata({
+  title: "Quand passer son contrôle technique : délais, validité",
+  description:
+    "Premier contrôle à 4 ans, validité de 2 ans, contre-visite sous 2 mois, moto tous les 3 ans : les échéances du contrôle technique et les risques en cas de retard.",
+  path: "/quand-passer-controle",
+})
 
 const vehicleTypes = [
   {
@@ -109,6 +112,7 @@ const timeline = [
 export default function QuandPasserControle() {
   return (
     <PageLayout
+      path="/quand-passer-controle"
       title="Quand Passer Votre Contrôle Technique ?"
       subtitle="Tout savoir sur les délais et les échéances de votre contrôle technique automobile."
       badge="Réglementation"

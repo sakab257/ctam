@@ -1,11 +1,14 @@
 import { PageLayout } from "@/components/layout/page-layout"
+import { buildMetadata } from "@/lib/seo"
 import { Lightbulb, AlertTriangle, CheckCircle2, Car, Eye, Disc, CreditCard, Users, Wrench, Volume2 } from "lucide-react"
 import { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Éviter la Contre-Visite | CTAM - Contrôle Technique",
-  description: "Conseils et astuces pour préparer votre véhicule et éviter la contre-visite lors de votre contrôle technique.",
-}
+export const metadata: Metadata = buildMetadata({
+  title: "Comment éviter la contre-visite au contrôle technique",
+  description:
+    "Éclairage, freins, pneus, visibilité, échappement : nos conseils pour préparer votre véhicule et réussir votre contrôle technique du premier coup.",
+  path: "/eviter-contre-visite",
+})
 
 const checkPoints = [
   {
@@ -93,6 +96,7 @@ const checkPoints = [
 export default function EviterContreVisite() {
   return (
     <PageLayout
+      path="/eviter-contre-visite"
       title="Éviter la Contre-Visite"
       subtitle="Conformément au code de la route, le propriétaire d'un véhicule a l'obligation de maintenir son véhicule en bon état de marche et en état satisfaisant d'entretien."
       badge="Conseils Pratiques"

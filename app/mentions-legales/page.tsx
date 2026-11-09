@@ -1,11 +1,14 @@
 import { PageLayout } from "@/components/layout/page-layout"
+import { buildMetadata } from "@/lib/seo"
 import { Building2, User, Globe, Shield, Server } from "lucide-react"
 import { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Mentions Légales | CTAM - Contrôle Technique",
-  description: "Mentions légales du site CTAM - Centre de Contrôle Technique Automobile Le Blanc-Mesnil et Ivry-sur-Seine.",
-}
+export const metadata: Metadata = buildMetadata({
+  title: "Mentions légales",
+  description:
+    "Mentions légales du site CTAM : éditeur, hébergeur et informations sur les centres de contrôle technique AUTOSUR du Blanc-Mesnil et d'Ivry-sur-Seine.",
+  path: "/mentions-legales",
+})
 
 const sections = [
   {
@@ -50,6 +53,7 @@ const sections = [
 export default function MentionsLegales() {
   return (
     <PageLayout
+      path="/mentions-legales"
       title="Mentions Légales"
       subtitle="Informations légales concernant le site CTAM et ses services."
       badge="Informations Légales"

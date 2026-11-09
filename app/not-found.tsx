@@ -1,7 +1,13 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { Header } from "@/components/navigation/header"
 import { Footer } from "@/components/navigation/footer"
 import { Home, ArrowLeft, Search } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Page introuvable",
+  robots: { index: false, follow: true },
+}
 
 export default function NotFound() {
   return (

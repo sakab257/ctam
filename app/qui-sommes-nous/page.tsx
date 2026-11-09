@@ -1,13 +1,16 @@
 import { PageLayout } from "@/components/layout/page-layout"
+import { buildMetadata } from "@/lib/seo"
 import { Users, Shield, Clock, Car, Zap, Award, CheckCircle2, MapPin, Phone } from "lucide-react"
 import { Metadata } from "next"
 import Link from "next/link"
 import { lbmInfo, ivryInfo } from "@/lib/tarifs-data"
 
-export const metadata: Metadata = {
-  title: "Qui Sommes-Nous | CTAM - Contrôle Technique",
-  description: "Découvrez CTAM, votre centre de contrôle technique automobile et moto au Blanc-Mesnil et Ivry-sur-Seine depuis plus de 30 ans.",
-}
+export const metadata: Metadata = buildMetadata({
+  title: "Qui sommes-nous ? Vos centres de contrôle technique",
+  description:
+    "Deux centres de contrôle technique AUTOSUR au Blanc-Mesnil et à Ivry-sur-Seine, plus de 30 ans d'expérience en auto et moto : notre équipe et nos agréments.",
+  path: "/qui-sommes-nous",
+})
 
 const values = [
   {
@@ -60,6 +63,7 @@ const centers = [
 export default function QuiSommesNous() {
   return (
     <PageLayout
+      path="/qui-sommes-nous"
       title="Qui Sommes-Nous ?"
       subtitle="Notre préoccupation, votre sécurité. Depuis plus de 30 ans, nous vous accompagnons pour la sécurité de votre véhicule."
       badge="Notre Histoire"

@@ -1,12 +1,15 @@
 import { PageLayout } from "@/components/layout/page-layout"
+import { buildMetadata } from "@/lib/seo"
 import { Home, Car, CreditCard, Star, MapPin, FileText, Shield, Cookie, ScrollText, ChevronRight } from "lucide-react"
 import { Metadata } from "next"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  title: "Plan du Site | CTAM - Contrôle Technique",
-  description: "Plan du site CTAM - Retrouvez facilement toutes les pages de notre site.",
-}
+export const metadata: Metadata = buildMetadata({
+  title: "Plan du site",
+  description:
+    "Plan du site CTAM : retrouvez toutes les pages sur nos centres de contrôle technique du Blanc-Mesnil et d'Ivry-sur-Seine, tarifs, conseils et actualités.",
+  path: "/plan-site",
+})
 
 const siteStructure = [
   {
@@ -75,6 +78,7 @@ const siteStructure = [
 export default function PlanDuSite() {
   return (
     <PageLayout
+      path="/plan-site"
       title="Plan du Site"
       subtitle="Retrouvez facilement toutes les pages de notre site."
       badge="Navigation"
