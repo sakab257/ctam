@@ -2,7 +2,7 @@ export const links = [
     {
         title: "Services",
         href: "/#services",
-        description: "Rejoignez l'équipe CTAM - Consultez nos offres d'emploi"
+        description: "Découvrez nos services de contrôle technique auto, moto et utilitaire"
     },
     {
         title: "Tarifs & Horaires",

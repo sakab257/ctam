@@ -135,9 +135,9 @@ export const AutoPlanningWidget = ({ centerId }: AutoPlanningWidgetProps) => {
 
                     {/* Contenu */}
                     <div className="relative">
-                        <h3 className="text-lg font-bold text-gray-900 mb-1">
+                        <h2 className="text-lg font-bold text-gray-900 mb-1">
                             Réservation en ligne
-                        </h3>
+                        </h2>
                         <p className="text-sm text-gray-600">
                             Choisissez votre créneau en quelques clics
                         </p>

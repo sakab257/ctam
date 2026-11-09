@@ -17,7 +17,6 @@ export const Navbar = () => {
                     <li key={link.title}>
                         <Link
                             href={link.href}
-                            aria-label={link.description}
                             title={link.description}
                             className="relative capitalize text-gray-700 font-medium px-1 py-2 transition-colors duration-300 hover:text-primary group"
                         >
@@ -56,7 +55,6 @@ export const Other = () => {
                             <li key={link.title}>
                                 <Link
                                     href={link.href}
-                                    aria-label={link.description}
                                     title={link.description}
                                     className="relative capitalize text-gray-700 font-medium px-1 py-2 transition-colors duration-300 hover:text-primary group"
                                 >
@@ -94,18 +92,19 @@ export const MobileNav = () => {
                 <div className="flex flex-col gap-6 pb-6">
                     <nav aria-label="Navigation principale mobile">
                         <ul className="flex flex-col gap-2">
-                            <Link href="/#hero-section" className="w-full px-4">
-                                <Button className="font-bold text-lg py-6 w-full">
-                                    <Calendar className="h-5 w-5" aria-hidden="true" />
-                                    Prendre RDV
+                            <li className="w-full px-4">
+                                <Button asChild className="font-bold text-lg py-6 w-full">
+                                    <Link href="/#hero-section">
+                                        <Calendar className="h-5 w-5" aria-hidden="true" />
+                                        Prendre RDV
+                                    </Link>
                                 </Button>
-                            </Link>
+                            </li>
                             {links.map((link) => (
                                 <li key={link.title}>
                                     <Link
                                         href={link.href}
                                         onClick={() => setOpen(false)}
-                                        aria-label={link.description}
                                         title={link.description}
                                         className="block capitalize text-gray-700 font-medium px-4 py-3 rounded-lg transition-colors duration-200 hover:bg-gray-100 hover:text-primary"
                                     >
@@ -124,7 +123,6 @@ export const MobileNav = () => {
                                         <Link
                                             href={link.href}
                                             onClick={() => setOpen(false)}
-                                            aria-label={link.description}
                                             title={link.description}
                                             className="block capitalize text-gray-700 px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-gray-100 hover:text-primary"
                                         >

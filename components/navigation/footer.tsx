@@ -1,5 +1,3 @@
-"use client"
-
 import { Button } from "../ui/button"
 import { Phone, Calendar, MapPin, Clock, Facebook, Instagram } from "lucide-react"
 import Link from "next/link"
@@ -11,12 +9,13 @@ import {
     DialogTrigger,
 } from "../ui/dialog"
 import { lbmInfo, ivryInfo } from "@/lib/tarifs-data"
+import { centers } from "@/lib/site"
 
 export const FooterMobile = () => {
     return (
-        <footer
+        <div
             className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-lg lg:hidden"
-            role="contentinfo"
+            role="region"
             aria-label="Actions rapides"
         >
             <div className="container mx-auto px-4 py-3">
@@ -27,7 +26,7 @@ export const FooterMobile = () => {
                                 variant="outline"
                                 size="lg"
                                 className="flex-1 font-semibold border-2"
-                                aria-label="Choisir un centre à appeler"
+                                aria-label="Appeler un centre"
                             >
                                 <Phone className="h-5 w-5 mr-2" aria-hidden="true" />
                                 Appeler
@@ -78,7 +77,7 @@ export const FooterMobile = () => {
                             <Button
                                 size="lg"
                                 className="flex-1 font-semibold shadow-md"
-                                aria-label="Choisir un centre pour prendre rendez-vous"
+                                aria-label="Prendre RDV dans un centre"
                             >
                                 <Calendar className="h-5 w-5 mr-2" aria-hidden="true" />
                                 Prendre RDV
@@ -122,7 +121,7 @@ export const FooterMobile = () => {
                     </Dialog>
                 </div>
             </div>
-        </footer>
+        </div>
     )
 }
 
@@ -167,7 +166,11 @@ export const Footer = () => {
 
           {/* Column 2: Contact Le Blanc-Mesnil */}
           <div className="space-y-4">
-            <h3 className="text-white font-semibold text-lg mb-4">Le Blanc-Mesnil</h3>
+            <h3 className="text-white font-semibold text-lg mb-4">
+              <Link href={centers.lbm.path} title="Contrôle technique Le Blanc-Mesnil : prendre rendez-vous">
+                Le Blanc-Mesnil
+              </Link>
+            </h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -181,14 +184,18 @@ export const Footer = () => {
               </div>
               <div className="flex items-start gap-3">
                 <Clock className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <p className="text-sm text-gray-400">Lun - Sam : 9h - 18h</p>
+                <p className="text-sm text-gray-400">Lun - Sam : {centers.lbm.schedule.hours}</p>
               </div>
             </div>
           </div>
 
           {/* Column 3: Contact Ivry-sur-Seine */}
           <div className="space-y-4">
-            <h3 className="text-white font-semibold text-lg mb-4">Ivry-sur-Seine</h3>
+            <h3 className="text-white font-semibold text-lg mb-4">
+              <Link href={centers.ivry.path} title="Contrôle technique Ivry-sur-Seine : prendre rendez-vous">
+                Ivry-sur-Seine
+              </Link>
+            </h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -202,7 +209,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-start gap-3">
                 <Clock className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <p className="text-sm text-gray-400">Lun - Sam : 8h - 18h</p>
+                <p className="text-sm text-gray-400">Lun - Sam : {centers.ivry.schedule.hours}</p>
               </div>
             </div>
           </div>

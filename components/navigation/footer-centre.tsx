@@ -35,9 +35,9 @@ export const FooterCentre = ({ phone, centerName, children, useAutoplanning = fa
     }
 
     return (
-        <footer
+        <div
             className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-lg lg:hidden"
-            role="contentinfo"
+            role="region"
             aria-label="Actions rapides"
         >
             <div className="container mx-auto px-4 py-3">
@@ -62,7 +62,7 @@ export const FooterCentre = ({ phone, centerName, children, useAutoplanning = fa
                     <Button
                         size="lg"
                         className="flex-1 font-semibold shadow-md"
-                        aria-label={`Prendre rendez-vous au centre ${centerName}`}
+                        aria-label={`Prendre RDV au centre ${centerName}`}
                         onClick={handleRdvClick}
                     >
                         <Calendar className="h-5 w-5 mr-2" aria-hidden="true" />
@@ -86,6 +86,6 @@ export const FooterCentre = ({ phone, centerName, children, useAutoplanning = fa
                     )}
                 </div>
             </div>
-        </footer>
+        </div>
     )
 }

@@ -85,7 +85,7 @@ export const HeroCTAButtons = () => {
           >
             <Link
               href={locations[selectedCenter].slug}
-              aria-label={locations[selectedCenter].description}
+              aria-label={`Prendre RDV au centre ${locations[selectedCenter].name}`}
               title={locations[selectedCenter].description}
             >
               <Calendar className="h-5 w-5 md:h-6 md:w-6 mr-2" aria-hidden="true" />

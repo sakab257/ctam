@@ -11,12 +11,12 @@ export const Header = () => {
                 <NavLogo />
                 <div className="hidden lg:flex gap-2 items-center">
                     <Navbar />
-                    <Link href={`/#hero-section`}>
-                        <Button className="font-bold hover:scale-105 transition-all">
+                    <Button asChild className="font-bold hover:scale-105 transition-all">
+                        <Link href={`/#hero-section`}>
                             <Calendar className="h-5 w-5" aria-hidden="true" />
                             Prendre RDV
-                        </Button>
-                    </Link>
+                        </Link>
+                    </Button>
                     <Other />
                 </div>
                 <MobileNav />
