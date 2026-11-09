@@ -1,12 +1,14 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next"
+import { absoluteUrl } from "@/lib/site"
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/api/', '/_next/'],
+      userAgent: "*",
+      allow: "/",
+      // Ne pas bloquer /_next/ : Google en a besoin pour charger CSS, JS et images (next/image)
+      disallow: ["/api/"],
     },
-    sitemap: 'https://www.ctamcontrole.fr/sitemap.xml',
+    sitemap: absoluteUrl("/sitemap.xml"),
   }
 }

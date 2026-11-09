@@ -1,92 +1,37 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next"
+import { absoluteUrl, centers } from "@/lib/site"
+
+type ChangeFrequency = MetadataRoute.Sitemap[number]["changeFrequency"]
+
+interface SitemapEntry {
+  path: string
+  changeFrequency: ChangeFrequency
+  priority: number
+}
+
+// /cookies est exclu (noindex). Ajouter ici toute nouvelle page indexable.
+const entries: SitemapEntry[] = [
+  { path: "/", changeFrequency: "weekly", priority: 1 },
+  { path: centers.lbm.path, changeFrequency: "weekly", priority: 0.9 },
+  { path: centers.ivry.path, changeFrequency: "weekly", priority: 0.9 },
+  { path: "/acces-plan", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/quand-passer-controle", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/eviter-contre-visite", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/actualites", changeFrequency: "weekly", priority: 0.7 },
+  { path: "/qui-sommes-nous", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/recrutement", changeFrequency: "monthly", priority: 0.5 },
+  { path: "/plan-site", changeFrequency: "monthly", priority: 0.4 },
+  { path: "/mentions-legales", changeFrequency: "yearly", priority: 0.2 },
+  { path: "/politique-confidentialite", changeFrequency: "yearly", priority: 0.2 },
+  { path: "/conditions-generales", changeFrequency: "yearly", priority: 0.2 },
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.ctamcontrole.fr'
-
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/le-blanc-mesnil`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/ivry-sur-seine`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/qui-sommes-nous`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/quand-passer-controle`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/eviter-contre-visite`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/acces-plan`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/actualites`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/recrutement`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/mentions-legales`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/politique-confidentialite`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/conditions-generales`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/cookies`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/plan-site`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-  ]
+  const lastModified = new Date()
+  return entries.map(({ path, changeFrequency, priority }) => ({
+    url: absoluteUrl(path),
+    lastModified,
+    changeFrequency,
+    priority,
+  }))
 }
