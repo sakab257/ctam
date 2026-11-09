@@ -38,6 +38,8 @@ export function CookieBanner() {
     }
     localStorage.setItem("cookie-preferences", JSON.stringify(allAccepted))
     localStorage.setItem("cookie-consent", "true")
+    // Informe Google Analytics (components/analytics) du nouveau consentement
+    window.dispatchEvent(new Event("cookie-consent-updated"))
     setIsAnimating(false)
     setTimeout(() => setIsVisible(false), 300)
   }
@@ -50,6 +52,7 @@ export function CookieBanner() {
     }
     localStorage.setItem("cookie-preferences", JSON.stringify(onlyNecessary))
     localStorage.setItem("cookie-consent", "true")
+    window.dispatchEvent(new Event("cookie-consent-updated"))
     setIsAnimating(false)
     setTimeout(() => setIsVisible(false), 300)
   }
@@ -113,15 +116,16 @@ export function CookieBanner() {
               >
                 Refuser
               </Button>
-              <Link href="/cookies">
-                <Button
-                  variant="ghost"
-                  className="font-semibold w-full sm:w-auto text-gray-600"
-                >
+              <Button
+                asChild
+                variant="ghost"
+                className="font-semibold w-full sm:w-auto sm:self-start text-gray-600"
+              >
+                <Link href="/cookies">
                   <Settings className="h-4 w-4 mr-2" />
                   Personnaliser
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
 

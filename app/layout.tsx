@@ -1,43 +1,47 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import "./globals.css";
 import { poppins } from "@/lib/fonts";
 import { CookieBanner } from "@/components/cookies/cookie-banner";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { JsonLd } from "@/components/seo/json-ld";
+import { siteConfig } from "@/lib/site";
+import { jsonLdGraph, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
+// Metadata par défaut. Chaque page définit son title, sa description et
+// son canonical via buildMetadata() (lib/seo.ts).
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "CTAM - Contrôle Technique Auto Moto | Le Blanc-Mesnil & Ivry",
-    template: "%s | CTAM"
+    default: "Contrôle technique au Blanc-Mesnil et à Ivry-sur-Seine | CTAM",
+    template: `%s | ${siteConfig.name}`,
   },
-  description: "Prenez rendez-vous en ligne 24h/24 pour votre contrôle technique automobile, moto, voiture sans permis. Centres agréés au Blanc-Mesnil et Ivry-sur-Seine.",
-  keywords: ["contrôle technique", "CT", "automobile", "moto", "Le Blanc-Mesnil", "Ivry-sur-Seine", "CTAM", "Autosur"],
-  authors: [{ name: "CTAM" }],
-  creator: "SAS CT LBM",
-  publisher: "CTAM",
+  description: siteConfig.description,
+  applicationName: siteConfig.siteName,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   openGraph: {
     type: "website",
-    locale: "fr_FR",
-    url: "https://www.ctamcontrole.fr",
-    siteName: "CTAM - Contrôle Technique",
-    title: "CTAM - Contrôle Technique Auto Moto",
-    description: "Prenez rendez-vous en ligne 24h/24 pour votre contrôle technique. Centres agréés au Blanc-Mesnil et Ivry-sur-Seine.",
+    locale: siteConfig.locale,
+    siteName: siteConfig.siteName,
   },
   twitter: {
     card: "summary_large_image",
-    title: "CTAM - Contrôle Technique Auto Moto",
-    description: "Prenez rendez-vous en ligne 24h/24 pour votre contrôle technique automobile et moto.",
-  },
-  metadataBase: new URL("https://www.ctamcontrole.fr"),
-  alternates: {
-    canonical: "/",
   },
   verification: {
-    google: "I1jVgDC3x6teta_GkR7I4-dZ47YlIOw7nueaPxdSsGg",
-  }
+    google: siteConfig.googleSiteVerification,
+  },
 };
 
 export default function RootLayout({
@@ -50,23 +54,11 @@ export default function RootLayout({
       <body
         className={`${poppins.className} antialiased h-full overflow-y-auto`}
       >
+        <JsonLd data={jsonLdGraph(organizationJsonLd(), websiteJsonLd())} />
         {children}
         <CookieBanner />
-        {/* Chargement du script principal Google Tag */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-6Q6XBC9NRF"
-          strategy="afterInteractive"
-        />
-
-        {/* Initialisation de la configuration */}
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-6Q6XBC9NRF');
-          `}
-        </Script>
+        {/* Google Analytics 4 : chargé uniquement après consentement "analytiques" */}
+        <GoogleAnalytics />
       </body>
     </html>
   );
