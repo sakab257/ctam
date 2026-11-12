@@ -25,9 +25,10 @@ interface ReservationPageProps {
   children?: React.ReactNode
   dialogWidget?: React.ReactNode // Widget à afficher dans le dialog du footer mobile (pour iFrame)
   useAutoplanning?: boolean // Pour Le Blanc-Mesnil, utilise le bouton Autoplanning natif
+  seoContent?: React.ReactNode // Contenu informatif affiché sous la réservation (Server Component)
 }
 
-export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, useAutoplanning }: ReservationPageProps) => {
+export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, useAutoplanning, seoContent }: ReservationPageProps) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -185,6 +186,8 @@ export const ReservationPage = ({ center, iframeSrc, children, dialogWidget, use
                 </div>
               </div>
         </section>
+
+        {seoContent}
       </main>
 
       <Footer />

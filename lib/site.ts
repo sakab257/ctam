@@ -47,6 +47,8 @@ export interface Center {
   googleName: string
   /** Ville précédée de sa préposition : "au Blanc-Mesnil", "à Ivry-sur-Seine" */
   inCity: string
+  /** Ville précédée de "de" : "du Blanc-Mesnil", "d'Ivry-sur-Seine" */
+  ofCity: string
   address: {
     street: string
     postalCode: string
@@ -98,6 +100,7 @@ export const centers: Record<CenterId, Center> = {
     name: "Le Blanc-Mesnil",
     googleName: "AUTOSUR CTAM Contrôle Technique Le Blanc-Mesnil",
     inCity: "au Blanc-Mesnil",
+    ofCity: "du Blanc-Mesnil",
     address: {
       street: "17 rue Corneille",
       postalCode: "93150",
@@ -160,6 +163,7 @@ export const centers: Record<CenterId, Center> = {
     name: "Ivry-sur-Seine",
     googleName: "AUTOSUR CTAM Contrôle Technique Autosur Ivry-sur-Seine - Auto et Moto",
     inCity: "à Ivry-sur-Seine",
+    ofCity: "d'Ivry-sur-Seine",
     address: {
       street: "3-5 bd Hippolyte Marquès",
       postalCode: "94200",
@@ -204,6 +208,7 @@ export const centers: Record<CenterId, Center> = {
         "Gentilly",
         "Maisons-Alfort",
         "Choisy-le-Roi",
+        "Bercy",
       ],
       areas: ["Val-de-Marne", "Paris", "Île-de-France"],
     },

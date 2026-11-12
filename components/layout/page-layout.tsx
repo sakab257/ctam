@@ -3,6 +3,7 @@ import { Footer, FooterMobile } from "@/components/navigation/footer"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld"
+import type { BreadcrumbItem } from "@/lib/seo"
 
 interface PageLayoutProps {
   children: React.ReactNode
@@ -11,23 +12,39 @@ interface PageLayoutProps {
   badge?: string
   /** Chemin de la page : génère le fil d'Ariane JSON-LD (Accueil > titre) */
   path?: string
+  /** Fil d'Ariane complet (après "Accueil"), prioritaire sur `path` */
+  breadcrumb?: BreadcrumbItem[]
+  /** Lien de retour (par défaut : accueil) */
+  backHref?: string
+  backLabel?: string
 }
 
-export function PageLayout({ children, title, subtitle, badge, path }: PageLayoutProps) {
+export function PageLayout({
+  children,
+  title,
+  subtitle,
+  badge,
+  path,
+  breadcrumb,
+  backHref = "/",
+  backLabel = "Retour à l'accueil",
+}: PageLayoutProps) {
+  const breadcrumbItems = breadcrumb ?? (path ? [{ name: title, path }] : null)
+
   return (
     <div className="flex flex-col min-h-screen">
-      {path && <BreadcrumbJsonLd items={[{ name: title, path }]} />}
+      {breadcrumbItems && <BreadcrumbJsonLd items={breadcrumbItems} />}
       <Header />
       <main className="flex-1 w-full">
         {/* Hero Header */}
         <section className="relative bg-linear-to-br from-primary via-blue-600 to-indigo-700 py-16 md:py-24 overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
             <Link
-              href="/"
+              href={backHref}
               className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              Retour à l'accueil
+              {backLabel}
             </Link>
             {badge && (
               <div className="inline-block mb-4 ml-4">

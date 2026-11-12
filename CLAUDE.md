@@ -30,6 +30,18 @@ Site vitrine pour **CTAM** (Centre de Contrôle Technique Automobile) avec deux 
 - `PageLayout` accepte `path` pour générer le fil d'Ariane JSON-LD
 - Toute nouvelle page indexable doit être ajoutée dans `app/sitemap.ts`
 
+### Articles (`lib/articles-data.ts`)
+- Chaque article de la liste a automatiquement sa page `/actualites/<slug>` (slug généré depuis le titre, ou champ `slug`), générée au build via `generateStaticParams`
+- Ajouter un article = ajouter un objet À LA FIN de la liste, avec `sections` pour le contenu complet
+- Sans `sections` : page créée mais `noindex` et absente du sitemap (contenu trop pauvre)
+- Syntaxe dans les textes : `[lien](/url)` et `**gras**` (rendu par `components/content/rich-text.tsx`)
+- Ne pas changer le titre d'un article publié sans fixer `slug` (l'URL changerait)
+
+### Pages de contenu SEO
+- Pages centres : contenu sous la réservation via `CenterSeoContent` (`components/centre/`) + textes dans `lib/centres-content.ts`
+- `/tarifs`, `/contre-visite`, `/faq` : prix lus dans `lib/tarifs-data.ts` (jamais en dur)
+- Pages véhicules `/controle-technique-*` : données dans `lib/vehicules-data.ts`, gabarit `components/content/vehicle-page.tsx`
+
 ### Tarifs (`lib/tarifs-data.ts`)
 - `tarifsLBM` / `tarifsIvry` : Tableaux de tarifs par centre
 - `lbmInfo` / `ivryInfo` : Infos du centre, dérivées de `lib/site.ts`

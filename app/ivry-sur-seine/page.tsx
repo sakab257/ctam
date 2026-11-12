@@ -3,8 +3,10 @@ import { ReservationPage } from "@/components/reservation/reservation-page"
 import { IframeDialogWidget } from "@/components/reservation/iframe-dialog-widget"
 import { ivryInfo } from "@/lib/tarifs-data"
 import { JsonLd } from "@/components/seo/json-ld"
-import { breadcrumbJsonLd, buildMetadata, centerJsonLd, jsonLdGraph } from "@/lib/seo"
+import { breadcrumbJsonLd, buildMetadata, centerJsonLd, faqJsonLd, jsonLdGraph } from "@/lib/seo"
 import { centers } from "@/lib/site"
+import { CenterSeoContent } from "@/components/centre/center-seo-content"
+import { getCenterFaq } from "@/lib/centres-content"
 
 export const metadata: Metadata = buildMetadata({
   title: "Contrôle technique Ivry-sur-Seine 94200 : RDV en ligne",
@@ -29,13 +31,15 @@ export default function IvrySurSeinePage() {
       <JsonLd
         data={jsonLdGraph(
           centerJsonLd("ivry"),
-          breadcrumbJsonLd([{ name: "Contrôle technique Ivry-sur-Seine", path: centers.ivry.path }])
+          breadcrumbJsonLd([{ name: "Contrôle technique Ivry-sur-Seine", path: centers.ivry.path }]),
+          faqJsonLd(getCenterFaq("ivry"))
         )}
       />
       <ReservationPage
         center={centerInfo}
         iframeSrc={IFRAME_SRC}
         dialogWidget={<IframeDialogWidget src={IFRAME_SRC} title="Réservation Ivry-sur-Seine" />}
+        seoContent={<CenterSeoContent centerId="ivry" />}
       />
     </>
   )

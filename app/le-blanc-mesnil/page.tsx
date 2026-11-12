@@ -4,8 +4,10 @@ import { AutoPlanningWidget } from "@/components/reservation/autoplanning-widget
 import { ForceRefresh } from "@/components/reservation/force-refresh"
 import { lbmInfo } from "@/lib/tarifs-data"
 import { JsonLd } from "@/components/seo/json-ld"
-import { breadcrumbJsonLd, buildMetadata, centerJsonLd, jsonLdGraph } from "@/lib/seo"
+import { breadcrumbJsonLd, buildMetadata, centerJsonLd, faqJsonLd, jsonLdGraph } from "@/lib/seo"
 import { centers } from "@/lib/site"
+import { CenterSeoContent } from "@/components/centre/center-seo-content"
+import { getCenterFaq } from "@/lib/centres-content"
 
 export const metadata: Metadata = buildMetadata({
   title: "Contrôle technique Le Blanc-Mesnil 93150 : RDV en ligne",
@@ -33,12 +35,14 @@ export default function LeBlancMesnilPage() {
       <JsonLd
         data={jsonLdGraph(
           centerJsonLd("lbm"),
-          breadcrumbJsonLd([{ name: "Contrôle technique Le Blanc-Mesnil", path: centers.lbm.path }])
+          breadcrumbJsonLd([{ name: "Contrôle technique Le Blanc-Mesnil", path: centers.lbm.path }]),
+          faqJsonLd(getCenterFaq("lbm"))
         )}
       />
       <ReservationPage
         center={centerInfo}
         useAutoplanning={true}
+        seoContent={<CenterSeoContent centerId="lbm" />}
       >
         <AutoPlanningWidget centerId={AUTOPLANNING_ID} />
       </ReservationPage>

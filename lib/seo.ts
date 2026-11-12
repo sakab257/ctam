@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { absoluteUrl, centers, siteConfig, type Center, type CenterId } from "@/lib/site"
 import { tarifsIvry, tarifsLBM, type Tarif } from "@/lib/tarifs-data"
+import { toPlainText, type FaqItem } from "@/lib/content-types"
 
 // ---------------------------------------------------------------------------
 // Metadata
@@ -24,6 +25,8 @@ interface PageMetadataOptions {
   /** Si true, le titre est utilisé tel quel (sans " | CTAM") */
   absoluteTitle?: boolean
   noindex?: boolean
+  /** Pour un article : Open Graph de type "article" avec date de publication (ISO) */
+  article?: { publishedTime?: string }
 }
 
 /**
@@ -36,6 +39,7 @@ export function buildMetadata({
   path,
   absoluteTitle = false,
   noindex = false,
+  article,
 }: PageMetadataOptions): Metadata {
   const fullTitle = absoluteTitle ? title : `${title} | ${siteConfig.name}`
 
@@ -44,7 +48,9 @@ export function buildMetadata({
     description,
     alternates: { canonical: path },
     openGraph: {
-      type: "website",
+      ...(article
+        ? { type: "article" as const, publishedTime: article.publishedTime }
+        : { type: "website" as const }),
       locale: siteConfig.locale,
       siteName: siteConfig.siteName,
       url: path,
@@ -136,7 +142,7 @@ export function centerJsonLd(centerId: CenterId): JsonLdNode {
     "@id": centerNodeId(center),
     name: center.googleName,
     alternateName: `${siteConfig.name} ${center.name}`,
-    description: `Centre de contrôle technique agréé ${siteConfig.brand} ${center.inCity} (${center.address.departmentCode}) : voitures, motos, utilitaires, hybrides, GPL, camping-cars. Avec ou sans rendez-vous.`,
+    description: `Centre de contrôle technique agréé ${siteConfig.brand} ${center.inCity} (${center.address.departmentCode}) : voitures, utilitaires, hybrides, électrique, GPL, camping-cars, sans permis. Avec ou sans rendez-vous autour de vous, pas cher.`,
     url: pageUrl,
     telephone: center.phoneE164,
     image: absoluteUrl(siteConfig.logo),
@@ -224,6 +230,50 @@ export function breadcrumbJsonLd(items: BreadcrumbItem[]): JsonLdNode {
       name: item.name,
       item: absoluteUrl(item.path),
     })),
+  }
+}
+
+/** FAQ (FAQPage). Les réponses sont converties en texte brut. */
+export function faqJsonLd(items: FaqItem[]): JsonLdNode {
+  return {
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: toPlainText(item.answer) },
+    })),
+  }
+}
+
+interface ArticleJsonLdOptions {
+  title: string
+  description: string
+  path: string
+  datePublished?: string
+  section?: string
+}
+
+/** Article de blog (BlogPosting). */
+export function articleJsonLd({
+  title,
+  description,
+  path,
+  datePublished,
+  section,
+}: ArticleJsonLdOptions): JsonLdNode {
+  return {
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    url: absoluteUrl(path),
+    mainEntityOfPage: absoluteUrl(path),
+    ...(datePublished ? { datePublished, dateModified: datePublished } : {}),
+    ...(section ? { articleSection: section } : {}),
+    inLanguage: siteConfig.language,
+    image: absoluteUrl("/opengraph-image"),
+    author: { "@id": ORGANIZATION_ID },
+    publisher: { "@id": ORGANIZATION_ID },
+    isPartOf: { "@id": WEBSITE_ID },
   }
 }
 

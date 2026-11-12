@@ -27,10 +27,14 @@ const siteStructure = [
     icon: Car,
     color: "green",
     links: [
-      { name: "Contrôle technique auto", href: "/#services", description: "Véhicules particuliers et utilitaires" },
-      { name: "Contrôle technique moto", href: "/#services", description: "Deux-roues motorisés" },
-      { name: "Véhicules hybrides/électriques", href: "/#services", description: "Véhicules à énergie alternative" },
-      { name: "Camping-cars", href: "/#services", description: "Véhicules de loisirs" },
+      { name: "Contrôle technique auto", href: "/#services", description: "Véhicules particuliers essence et diesel" },
+      { name: "Utilitaires et 4x4", href: "/controle-technique-utilitaire", description: "Utilitaires légers, 4x4, pollution complémentaire" },
+      { name: "Véhicules hybrides/électriques", href: "/controle-technique-voiture-electrique-hybride", description: "Véhicules à énergie alternative" },
+      { name: "Véhicules GPL / GNV", href: "/controle-technique-gpl", description: "Contrôle de l'installation gaz" },
+      { name: "Camping-cars", href: "/controle-technique-camping-car", description: "Camping-cars et hors gabarit" },
+      { name: "Contrôle technique moto", href: "/controle-technique-moto", description: "Deux-roues, trois-roues et quads" },
+      { name: "Voitures sans permis", href: "/controle-technique-voiture-sans-permis", description: "Voiturettes et quadricycles" },
+      { name: "Contre-visite", href: "/contre-visite", description: "Délai, prix et démarche" },
     ]
   },
   {
@@ -39,9 +43,12 @@ const siteStructure = [
     color: "purple",
     links: [
       { name: "Tarifs & Horaires", href: "/#tarifs", description: "Nos prix et horaires d'ouverture" },
+      { name: "Comparatif des tarifs", href: "/tarifs", description: "Les prix de nos deux centres" },
+      { name: "Questions fréquentes", href: "/faq", description: "Vos questions, nos réponses" },
       { name: "Quand passer votre contrôle", href: "/quand-passer-controle", description: "Délais et échéances" },
       { name: "Éviter la contre-visite", href: "/eviter-contre-visite", description: "Conseils et astuces" },
       { name: "Accès & Plan", href: "/acces-plan", description: "Comment nous trouver" },
+      { name: "Actualités et conseils", href: "/actualites", description: "Réglementation et conseils d'entretien" },
     ]
   },
   {

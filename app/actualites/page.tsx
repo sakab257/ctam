@@ -3,6 +3,8 @@ import { buildMetadata } from "@/lib/seo"
 import { Newspaper, Calendar, Bike, Clock, CheckCircle2, ArrowRight, Gift } from "lucide-react"
 import { Metadata } from "next"
 import Link from "next/link"
+import { articles } from "@/lib/articles-data"
+import { articlePath } from "@/lib/articles"
 
 export const metadata: Metadata = buildMetadata({
   title: "Actualités et conseils sur le contrôle technique",
@@ -10,336 +12,6 @@ export const metadata: Metadata = buildMetadata({
     "Réglementation, conseils d'entretien, promotions et infos pratiques de nos centres de contrôle technique AUTOSUR du Blanc-Mesnil et d'Ivry-sur-Seine.",
   path: "/actualites",
 })
-
-const articles = [
-  // Article featured (index 0) - CT 2 roues
-  {
-    id: 1,
-    date: "15 avril 2024",
-    category: "Réglementation",
-    title: "Contrôle technique 2 roues : c'est parti !",
-    excerpt: "Le contrôle technique pour motos et deux-roues motorisés est désormais obligatoire depuis le 15 avril 2024.",
-    featured: true,
-    content: {
-      intro: "Le décret et l'arrêté sont parus au Journal Officiel le 23 Octobre 2023, avec une mise en application le 15 avril 2024.",
-      vehicules: [
-        "Motos et scooters (125 cm³ et plus)",
-        "Trois-roues motorisés",
-        "Quadricycles et quads",
-        "Voitures sans permis"
-      ],
-      calendrier: [
-        { periode: "Véhicules immatriculés avant le 01/01/2017", echeance: "Contrôle au plus tard le 31/12/2024" },
-        { periode: "Véhicules immatriculés du 01/01/2017 au 31/12/2019", echeance: "Contrôle en 2025" },
-        { periode: "Véhicules immatriculés du 01/01/2020 au 31/12/2021", echeance: "Contrôle en 2026" }
-      ],
-      frequence: "Premier contrôle à 5 ans après mise en circulation, puis tous les 3 ans."
-    }
-  },
-  // Jeu concours (index 1)
-  {
-    id: 2,
-    date: "1er décembre 2025",
-    category: "Événement",
-    title: "Jeu concours national AUTOSUR 2025",
-    excerpt: "Gagnez un week-end de rêve pour 2 personnes d'une valeur de 249€ ! Chaque semaine, un client peut remporter ce lot jusqu'à fin décembre.",
-    featured: false,
-    concours: {
-      gain: "Un week-end de rêve pour 2 personnes (hôtel 4 ou 5*, spa, petit-déjeuner, dîner gourmand) parmi 271 destinations en France et en Europe.",
-      valeur: 249,
-      participation: "Réservez un contrôle technique sur autosur.fr ou scannez le QR code sur les affiches en centre.",
-      finDate: "Fin décembre 2025"
-    }
-  },
-  // Promo Ivry (index 2)
-  {
-    id: 3,
-    date: "Décembre 2025",
-    category: "Promotion",
-    title: "Offre spéciale web : -5€ sur votre contrôle technique à Ivry-Sur-Seine",
-    excerpt: "Profitez de notre remise exclusive pour toute réservation en ligne sur les créneaux disponibles.",
-    featured: false,
-    promo: {
-      prix: 80,
-      prixOriginal: 85,
-      conditions: "Valable pour véhicules particuliers hors 4x4 et GPL, sur créneaux spécifiques pris en ligne."
-    }
-  },
-  // Promo Blanc-Mesnil (index 3)
-  {
-    id: 4,
-    date: "Décembre 2025",
-    category: "Promotion",
-    title: "Offre spéciale web : -4€ sur votre contrôle technique au Blanc-Mesnil",
-    excerpt: "Profitez de notre remise exclusive pour toute réservation en ligne sur les créneaux disponibles.",
-    featured: false,
-    promo: {
-      prix: 75,
-      prixOriginal: 79,
-      conditions: "Valable pour véhicules particuliers hors 4x4 et GPL, sur créneaux spécifiques pris en ligne."
-    }
-  },
-  // === Autres actualités (index 4+) - triées du plus récent au plus ancien ===
-  {
-    id: 5,
-    date: "1er janvier 2026",
-    category: "Fêtes",
-    title: "Bonne année 2026 !",
-    excerpt: "L'équipe CTAM AUTOSUR vous présente ses meilleurs voeux pour cette nouvelle année 2026 ! Que cette année vous apporte santé, bonheur et réussite. Nous restons à votre service pour tous vos contrôles techniques.",
-    featured: false
-  },
-  {
-    id: 6,
-    date: "28 décembre 2025",
-    category: "Conseil",
-    title: "Nouvelle année, pensez à votre contrôle technique !",
-    excerpt: "Commencez l'année du bon pied en vérifiant la date d'échéance de votre contrôle technique. Anticipez et réservez dès maintenant pour bénéficier des meilleurs créneaux et éviter les contre-visites.",
-    featured: false
-  },
-  {
-    id: 7,
-    date: "25 décembre 2025",
-    category: "Fêtes",
-    title: "Joyeux Noël à tous !",
-    excerpt: "Toute l'équipe CTAM AUTOSUR vous souhaite un très joyeux Noël ! Profitez de ces moments précieux en famille et entre amis. Nos centres seront fermés le 25 décembre et rouvriront dès le 26 décembre pour vous accueillir.",
-    featured: false
-  },
-  {
-    id: 8,
-    date: "23 décembre 2025",
-    category: "Information",
-    title: "Très belles fêtes de fin d'année",
-    excerpt: "Cher(e)s clients, toute l'équipe CTAM AUTOSUR vous souhaite de merveilleuses fêtes de fin d'année et vous adresse ses meilleurs voeux pour 2026, à vous et à vos proches. Que cette nouvelle année soit remplie de joie, de succès, et de précieux moments partagés avec ceux qui vous sont chers.",
-    featured: false
-  },
-  {
-    id: 9,
-    date: "15 décembre 2025",
-    category: "Information",
-    title: "Nouveau centre à Ivry-sur-Seine",
-    excerpt: "CTAM s'agrandit avec l'ouverture d'un second centre de contrôle technique sous l'enseigne AUTOSUR à Ivry-sur-Seine.",
-    featured: false
-  },
-  {
-  id: 10,
-  date: "10 avril 2026",
-  category: "Réglementation",
-  title: "Ce qui change au contrôle technique en 2026",
-  excerpt: "Nouvelles normes de pollution, points de contrôle supplémentaires, tarifs actualisés... Le contrôle technique automobile évolue en 2026. Tout ce qu'il faut savoir si vous êtes conducteur en Île-de-France, à Paris, au Blanc-Mesnil ou à Ivry-sur-Seine.",
-  featured: false
-},
-{
-  id: 11,
-  date: "24 avril 2026",
-  category: "Conseil",
-  title: "Les 5 défauts les plus fréquents au contrôle technique automobile",
-  excerpt: "Éclairage défectueux, freins usés, pneumatiques lisses... Des milliers de conducteurs en Île-de-France échouent leur contrôle technique pour des raisons évitables. Nos centres CTAM AUTOSUR au Blanc-Mesnil et à Ivry-sur-Seine vous révèlent les 5 points de défaillance les plus courants.",
-  featured: false
-},
-{
-  id: 12,
-  date: "27 avril 2026",
-  category: "Conseil",
-  title: "Comment éviter la contre-visite : nos conseils avant votre contrôle technique",
-  excerpt: "La contre-visite concerne près de 20% des véhicules. Vérifiez ces points clés avant de passer le contrôle technique automobile au Blanc-Mesnil ou à Ivry-sur-Seine et mettez toutes les chances de votre côté.",
-  featured: false
-},
-{
-  id: 13,
-  date: "1er mai 2026",
-  category: "Information",
-  title: "Que risquez-vous si vous roulez sans contrôle technique valide ?",
-  excerpt: "Amende de 135€, immobilisation du véhicule, refus d'assurance en cas d'accident... Rouler sans contrôle technique automobile expose à de lourdes sanctions. Prenez rendez-vous dans nos centres au Blanc-Mesnil ou à Ivry-sur-Seine avant qu'il ne soit trop tard.",
-  featured: false
-},
-{
-  id: 14,
-  date: "8 mai 2026",
-  category: "Conseil",
-  title: "Vendre son véhicule d'occasion : le contrôle technique est obligatoire",
-  excerpt: "Pour vendre une voiture de plus de 4 ans à un particulier, le procès-verbal de contrôle technique automobile doit dater de moins de 6 mois. Nos centres CTAM AUTOSUR au Blanc-Mesnil et à Ivry-sur-Seine vous délivrent votre PV sur place, en Île-de-France.",
-  featured: false
-},
-{
-  id: 15,
-  date: "15 mai 2026",
-  category: "Réglementation",
-  title: "Défaillance mineure, majeure ou critique : comprendre votre procès-verbal",
-  excerpt: "Favorable, défavorable, code S ou code R : que signifient réellement les mentions de votre contrôle technique ? Nos contrôleurs agréés du Blanc-Mesnil et d'Ivry-sur-Seine décryptent chaque ligne de votre rapport et vous expliquent vos droits de circulation.",
-  featured: false
-},
-{
-  id: 16,
-  date: "22 mai 2026",
-  category: "Information",
-  title: "Combien coûte un contrôle technique automobile en Île-de-France ?",
-  excerpt: "Les prix du contrôle technique sont libres et non réglementés. Motorisation, type de véhicule, contre-visite : découvrez ce qui fait varier le tarif et nos prix pratiqués dans nos centres AUTOSUR du Blanc-Mesnil (93) et d'Ivry-sur-Seine (94).",
-  featured: false
-},
-{
-  id: 17,
-  date: "29 mai 2026",
-  category: "Conseil",
-  title: "Préparer son véhicule la veille du contrôle technique : la checklist",
-  excerpt: "Feux, essuie-glaces, pneumatiques, niveaux, klaxon, coffre vidé : 10 vérifications simples à faire chez vous avant votre rendez-vous. Les conducteurs de Drancy, Le Bourget, Vitry-sur-Seine ou Charenton-le-Pont gagnent un temps précieux avec ce réflexe.",
-  featured: false
-},
-{
-  id: 18,
-  date: "5 juin 2026",
-  category: "Réglementation",
-  title: "Contrôle technique moto : les véhicules immatriculés en 2020 et 2021 concernés",
-  excerpt: "L'échéance 2026 concerne les deux-roues motorisés mis en circulation entre le 1er janvier 2020 et le 31 décembre 2021. Motos, scooters, trois-roues et voitures sans permis : faites le point avec nos centres CTAM AUTOSUR en Seine-Saint-Denis et Val-de-Marne.",
-  featured: false
-},
-{
-  id: 19,
-  date: "12 juin 2026",
-  category: "Réglementation",
-  title: "Voiture électrique et hybride : comment se passe le contrôle technique ?",
-  excerpt: "Depuis 2026, le contrôle technique des véhicules 100% électriques inclut la vérification de l'état de santé de la batterie de traction via le diagnostic embarqué. Nos centres du Blanc-Mesnil et d'Ivry-sur-Seine sont équipés pour votre véhicule électrifié.",
-  featured: false
-},
-{
-  id: 20,
-  date: "19 juin 2026",
-  category: "Information",
-  title: "ZFE du Grand Paris : quel lien avec votre contrôle technique ?",
-  excerpt: "Vignette Crit'Air, restrictions de circulation dans la métropole parisienne, normes antipollution : ce que les automobilistes d'Île-de-France doivent savoir. Un contrôle technique automobile à jour reste la base pour circuler sereinement à Paris et en petite couronne.",
-  featured: false
-},
-{
-  id: 21,
-  date: "26 juin 2026",
-  category: "Conseil",
-  title: "Départ en vacances : anticipez votre contrôle technique automobile",
-  excerpt: "Partir sur l'autoroute avec un contrôle technique qui expire en plein mois d'août, c'est le mauvais plan. Vérifiez votre date d'échéance et réservez votre créneau dès maintenant dans nos centres du Blanc-Mesnil et d'Ivry-sur-Seine avant l'affluence de juillet.",
-  featured: false
-},
-{
-  id: 22,
-  date: "3 juillet 2026",
-  category: "Information",
-  title: "Horaires d'été : nos centres CTAM AUTOSUR restent ouverts",
-  excerpt: "Nos deux centres de contrôle technique automobile du Blanc-Mesnil et d'Ivry-sur-Seine vous accueillent tout l'été. Retrouvez nos horaires d'ouverture de juillet et août et réservez votre rendez-vous en ligne en quelques clics.",
-  featured: false
-},
-{
-  id: 23,
-  date: "10 juillet 2026",
-  category: "Conseil",
-  title: "Pneus, freins, amortisseurs : les 3 organes qui font échouer le contrôle",
-  excerpt: "Profondeur de sculpture, déséquilibre de freinage, amortisseurs fatigués : comment tester vous-même ces trois points avant votre contrôle technique. Entre les nids-de-poule et les ralentisseurs d'Île-de-France, les trains roulants souffrent vite.",
-  featured: false
-},
-{
-  id: 24,
-  date: "17 juillet 2026",
-  category: "Réglementation",
-  title: "Rappels constructeurs et airbags Takata : ce que vérifie le contrôleur",
-  excerpt: "Depuis le 1er janvier 2026, votre véhicule est signalé s'il fait l'objet d'un rappel grave. Un airbag Takata classé stop drive entraîne une contre-visite automatique et l'interdiction de circuler. Vérifiez votre immatriculation avant votre rendez-vous.",
-  featured: false
-},
-{
-  id: 25,
-  date: "24 juillet 2026",
-  category: "Conseil",
-  title: "Test antipollution : comment mettre toutes les chances de votre côté",
-  excerpt: "Diesel ou essence, la mesure des émissions fait échouer de nombreux véhicules qui ne roulent qu'en ville. Faites une trentaine de kilomètres sur voie rapide et venez moteur chaud dans nos centres du Blanc-Mesnil et d'Ivry-sur-Seine : le résultat change du tout au tout.",
-  featured: false
-},
-{
-  id: 26,
-  date: "31 juillet 2026",
-  category: "Information",
-  title: "Contre-visite : vous avez 2 mois, pas un jour de plus",
-  excerpt: "Le délai pour repasser après un résultat défavorable est de deux mois à compter de la date du contrôle technique périodique. Au-delà, il faut repayer un contrôle complet. Nos centres CTAM AUTOSUR vous reçoivent rapidement pour votre contre-visite.",
-  featured: false
-},
-{
-  id: 27,
-  date: "7 août 2026",
-  category: "Conseil",
-  title: "Fortes chaleurs : les points à surveiller sur votre véhicule",
-  excerpt: "Pression des pneumatiques, liquide de refroidissement, batterie, climatisation : la canicule met les véhicules à rude épreuve en Île-de-France. Quelques vérifications simples pour éviter la panne et arriver serein à votre contrôle technique automobile.",
-  featured: false
-},
-  {
-  id: 28,
-  date: "21 août 2026",
-  category: "Conseil",
-  title: "Rentrée : c'est le bon moment pour votre contrôle technique",
-  excerpt: "Septembre est l'un des mois les plus chargés dans les centres de contrôle technique. Prenez de l'avance et réservez dès la fin août votre créneau au Blanc-Mesnil ou à Ivry-sur-Seine pour choisir votre horaire plutôt que de le subir.",
-  featured: false
-},
-{
-  id: 29,
-  date: "28 août 2026",
-  category: "Conseil",
-  title: "Acheter une voiture d'occasion : savoir lire le procès-verbal",
-  excerpt: "Date du contrôle, défaillances mineures, kilométrage relevé : le PV de contrôle technique automobile en dit long sur l'état réel du véhicule. Nos conseils pour acheter sans mauvaise surprise, et le contrôle volontaire avant achat proposé dans nos centres.",
-  featured: false
-},
-{
-  id: 30,
-  date: "4 septembre 2026",
-  category: "Conseil",
-  title: "Voyants au tableau de bord : lesquels bloquent le contrôle technique ?",
-  excerpt: "Voyant moteur, ABS, airbag, ESP : un témoin allumé est relevé lors du contrôle technique automobile. Et masquer un voyant est considéré comme une fraude. Faites diagnostiquer avant de venir dans nos centres du Blanc-Mesnil ou d'Ivry-sur-Seine.",
-  featured: false
-},
-{
-  id: 31,
-  date: "11 septembre 2026",
-  category: "Conseil",
-  title: "Éclairage : le premier motif de contre-visite en France",
-  excerpt: "Une ampoule de stop grillée, un phare mal réglé, un feu de plaque hors service suffisent à faire basculer votre contrôle technique en défavorable. Avec les journées qui raccourcissent, c'est le moment de tout vérifier feu par feu.",
-  featured: false
-},
-{
-  id: 32,
-  date: "18 septembre 2026",
-  category: "Réglementation",
-  title: "Voitures sans permis et quadricycles : le contrôle technique obligatoire",
-  excerpt: "Les voiturettes et quadricycles à moteur sont soumis au contrôle technique au même titre que les deux-roues motorisés. Périodicité, points vérifiés, tarifs : le guide complet pour les conducteurs d'Île-de-France, à Paris et en petite couronne.",
-  featured: false
-},
-{
-  id: 33,
-  date: "25 septembre 2026",
-  category: "Information",
-  title: "Contrôle technique périmé : amende, immobilisation et assurance",
-  excerpt: "135 euros d'amende forfaitaire, immobilisation possible du véhicule, rétention de la carte grise et risque de refus de prise en charge par votre assureur en cas d'accident. Ne prenez pas ce risque : réservez votre contrôle technique automobile dès aujourd'hui.",
-  featured: false
-},
-{
-  id: 34,
-  date: "2 octobre 2026",
-  category: "Conseil",
-  title: "Votre véhicule ne roule presque plus ? Attention à l'encrassement",
-  excerpt: "Trajets domicile-travail de quelques kilomètres entre Aulnay-sous-Bois et Le Bourget, ou entre Vitry-sur-Seine et Paris : le moteur n'atteint jamais sa température optimale et l'échappement s'encrasse. Un vrai piège au moment du contrôle antipollution.",
-  featured: false
-},
-{
-  id: 35,
-  date: "9 octobre 2026",
-  category: "Conseil",
-  title: "Pneus hiver : ce que dit la réglementation et ce que vérifie le contrôleur",
-  excerpt: "Obligations dans les zones montagneuses, monte homogène par essieu, profondeur minimale de 1,6 mm : nos contrôleurs agréés font le point avant l'hiver. Nos centres CTAM AUTOSUR au Blanc-Mesnil et à Ivry-sur-Seine vous conseillent.",
-  featured: false
-},
-{
-  id: 36,
-  date: "23 octobre 2026",
-  category: "Conseil",
-  title: "Passage à l'heure d'hiver : visibilité et sécurité de votre véhicule",
-  excerpt: "Avec la nuit qui tombe plus tôt, l'état de vos feux, de votre pare-brise et de vos essuie-glaces devient critique. Trois vérifications rapides à faire ce week-end, avant votre prochain contrôle technique automobile en Île-de-France.",
-  featured: false
-},
-
-
-
-]
 
 export default function Actualites() {
   return (
@@ -360,7 +32,9 @@ export default function Actualites() {
               </span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold">
-              Contrôle Technique 2 Roues
+              <Link href={articlePath(articles[0])} className="hover:underline">
+                Contrôle Technique 2 Roues
+              </Link>
             </h2>
             <p className="text-white/90 mt-2">
               Mise en application : 15 avril 2024
@@ -506,7 +180,7 @@ export default function Actualites() {
           {articles.slice(4).reverse().map((article) => (
             <div
               key={article.id}
-              className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-shadow"
+              className="relative group bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-shadow"
             >
               <div className="flex items-center gap-2 mb-3">
                 <Calendar className="h-4 w-4 text-gray-400" />
@@ -515,12 +189,19 @@ export default function Actualites() {
                   {article.category}
                 </span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                {article.title}
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                {/* Lien étiré : toute la carte est cliquable */}
+                <Link href={articlePath(article)} className="after:absolute after:inset-0">
+                  {article.title}
+                </Link>
               </h3>
               <p className="text-gray-600 text-sm">
                 {article.excerpt}
               </p>
+              <span className="inline-flex items-center gap-1 mt-3 text-sm font-semibold text-primary">
+                Lire l&apos;article
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </span>
             </div>
           ))}
         </div>
